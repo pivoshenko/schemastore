@@ -104,10 +104,12 @@
     {
       "name": "ABCSupplyPlan",
       "description": "ABCSupplyPlan representing all the state for performing inventory optimization and expiry analysis in ABC-Plan MasterPlanner",
-      "fileMatch": ["abc-supply-plan-1.0.0.yml", "abc-supply-plan-1.0.0.yaml"],
-      "url": "https://json.schemastore.org/abc-supply-plan-1.0.0.json",
+      "fileMatch": ["abc-supply-plan-*.json"],
+      "url": "https://json.schemastore.org/abc-supply-plan-3.0.0.json",
       "versions": {
-        "1.0.0": "https://json.schemastore.org/abc-supply-plan-1.0.0.json"
+        "1.0.0": "https://json.schemastore.org/abc-supply-plan-1.0.0.json",
+        "2.0.0": "https://json.schemastore.org/abc-supply-plan-2.0.0.json",
+        "3.0.0": "https://json.schemastore.org/abc-supply-plan-3.0.0.json"
       }
     },
     {
@@ -505,6 +507,12 @@
       "url": "https://json.schemastore.org/buf.work.json"
     },
     {
+      "name": "CodeRabbit",
+      "description": "Supercharge your entire team with AI-driven contextual feedback & smart chat",
+      "fileMatch": [".coderabbit.yaml"],
+      "url": "https://coderabbit.ai/integrations/schema.v2.json"
+    },
+    {
       "name": "CodeCV",
       "description": "CV format specification",
       "fileMatch": [
@@ -889,6 +897,16 @@
       "description": "CMake Presets",
       "fileMatch": ["CMakePresets.json", "CMakeUserPresets.json"],
       "url": "https://raw.githubusercontent.com/Kitware/CMake/master/Help/manual/presets/schema.json"
+    },
+    {
+      "name": "Cache Warmup config",
+      "description": "Cache Warmup config",
+      "fileMatch": [
+        "cache-warmup.json",
+        "cache-warmup.yaml",
+        "cache-warmup.yml"
+      ],
+      "url": "https://raw.githubusercontent.com/eliashaeussler/cache-warmup/main/res/cache-warmup-config.schema.json"
     },
     {
       "name": "Calqulus pipeline",
@@ -1426,6 +1444,84 @@
       "url": "https://raw.githubusercontent.com/aws/aws-sam-cli/master/schema/samcli.json"
     },
     {
+      "name": "Landing Zone Accelerator on AWS - Accounts Config",
+      "description": "Used to manage all of the AWS accounts within the AWS Organization",
+      "fileMatch": ["accounts-config.yaml"],
+      "url": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/accounts-config.json",
+      "versions": {
+        "v1.7.0": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/accounts-config.json"
+      }
+    },
+    {
+      "name": "Landing Zone Accelerator on AWS - Customizations Config",
+      "description": "Used to manage configuration of custom applications, third-party firewall appliances, and CloudFormation stacks",
+      "fileMatch": ["customizations-config.yaml"],
+      "url": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/customizations-config.json",
+      "versions": {
+        "v1.7.0": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/customizations-config.json"
+      }
+    },
+    {
+      "name": "Landing Zone Accelerator on AWS - Global Config",
+      "description": "Used to manage all of the global properties that can be inherited across the AWS Organization",
+      "fileMatch": ["global-config.yaml"],
+      "url": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/global-config.json",
+      "versions": {
+        "v1.7.0": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/global-config.json"
+      }
+    },
+    {
+      "name": "Landing Zone Accelerator on AWS - IAM Config",
+      "description": "Used to manage all of the IAM resources across the AWS Organization",
+      "fileMatch": ["iam-config.yaml"],
+      "url": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/iam-config.json",
+      "versions": {
+        "v1.7.0": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/iam-config.json"
+      }
+    },
+    {
+      "name": "Landing Zone Accelerator on AWS - Network Config",
+      "description": "Used to manage and implement network resources to establish a WAN/LAN architecture to support cloud operations and application workloads in AWS",
+      "fileMatch": ["network-config.yaml"],
+      "url": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/network-config.json",
+      "versions": {
+        "v1.7.0": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/network-config.json"
+      }
+    },
+    {
+      "name": "Landing Zone Accelerator on AWS - Organization Config",
+      "description": "Used to manage all of the organization units in the AWS Organization",
+      "fileMatch": ["organization-config.yaml"],
+      "url": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/organization-config.json",
+      "versions": {
+        "v1.7.0": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/organization-config.json"
+      }
+    },
+    {
+      "name": "Landing Zone Accelerator on AWS - Replacements Config",
+      "description": "Used to manage all of the replacement values across the configuration files",
+      "fileMatch": ["replacements-config.yaml"],
+      "url": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/replacements-config.json",
+      "versions": {
+        "v1.7.0": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/replacements-config.json"
+      }
+    },
+    {
+      "name": "Landing Zone Accelerator on AWS - Security Config",
+      "description": "Used to manage configuration of AWS security services",
+      "fileMatch": ["security-config.yaml"],
+      "url": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/security-config.json",
+      "versions": {
+        "v1.7.0": "https://raw.githubusercontent.com/awslabs/landing-zone-accelerator-on-aws/v1.7.0/source/packages/@aws-accelerator/config/lib/schemas/security-config.json"
+      }
+    },
+    {
+      "name": "Changesets",
+      "description": "A way to manage your versioning and changelogs with a focus on monorepos",
+      "fileMatch": ["**/.changeset/config.json"],
+      "url": "https://unpkg.com/@changesets/config/schema.json"
+    },
+    {
       "name": "chisel-slices.json",
       "description": "Canonical Chisel slices definition file",
       "fileMatch": ["**/slices/*.yaml"],
@@ -1925,6 +2021,12 @@
       }
     },
     {
+      "name": "EAS config",
+      "description": "The EAS config (eas.json) validation and documentation",
+      "fileMatch": ["eas.json"],
+      "url": "https://raw.githubusercontent.com/expo/eas-cli/main/packages/eas-json/schema/eas.schema.json"
+    },
+    {
       "name": "ezd task runner",
       "description": "ezd task runner. Documentation: https://gitlab.com/sbenv/veroxis/ezd-rs",
       "fileMatch": ["ezd.yaml", "ezd.json", "ezd.yml"],
@@ -2419,6 +2521,12 @@
       "url": "https://json.schemastore.org/htmlhint.json"
     },
     {
+      "name": ".htmlvalidate",
+      "description": "HTML-validate is an offline HTML5 validator",
+      "fileMatch": [".htmlvalidate.json"],
+      "url": "https://html-validate.org/schemas/config.json"
+    },
+    {
       "name": "Ory Hydra configuration",
       "description": "Ory Hydra configuration file",
       "fileMatch": ["hydra.json", "hydra.yml", "hydra.yaml", "hydra.toml"],
@@ -2662,7 +2770,7 @@
     {
       "name": "JSONPatch",
       "description": "JSONPatch files",
-      "fileMatch": ["*.patch", "*.patch.json"],
+      "fileMatch": ["*.patch", "*.patch.json", "*.patch.yml", "*.patch.yaml"],
       "url": "https://json.schemastore.org/json-patch.json"
     },
     {
@@ -3048,10 +3156,14 @@
       "url": "https://json.schemastore.org/minecraft-trim-pattern.json"
     },
     {
-      "name": "MkDocs Configuration 1.0",
+      "name": "mkdocs.yml",
       "description": "MkDocs configuration file",
       "fileMatch": ["mkdocs.yml"],
-      "url": "https://json.schemastore.org/mkdocs-1.0.json"
+      "url": "https://json.schemastore.org/mkdocs-1.6.json",
+      "versions": {
+        "1.0": "https://json.schemastore.org/mkdocs-1.0.json",
+        "1.6": "https://json.schemastore.org/mkdocs-1.6.json"
+      }
     },
     {
       "name": "MLOS Configs",
@@ -3159,6 +3271,7 @@
       "url": "https://json.schemastore.org/ninjs-2.0.json",
       "versions": {
         "2.0": "https://json.schemastore.org/ninjs-2.0.json",
+        "1.4": "https://json.schemastore.org/ninjs-1.4.json",
         "1.3": "https://json.schemastore.org/ninjs-1.3.json",
         "1.2": "https://json.schemastore.org/ninjs-1.2.json",
         "1.1": "https://json.schemastore.org/ninjs-1.1.json",
@@ -3338,6 +3451,15 @@
       "description": "OpenRewrite resource descriptors",
       "fileMatch": ["**/META-INF/rewrite/*.yml"],
       "url": "https://raw.githubusercontent.com/openrewrite/rewrite/main/rewrite-core/openrewrite.json"
+    },
+    {
+      "name": "Open Data Contract Standard (ODCS))",
+      "description": "Open Data Contract Standard contract file",
+      "fileMatch": ["*.odcs.yaml", "*.odcs.yml"],
+      "url": "https://raw.githubusercontent.com/bitol-io/open-data-contract-standard/main/schema/odcs-json-schema-latest.json",
+      "versions": {
+        "v2.2.2": "https://github.com/bitol-io/open-data-contract-standard/blob/main/schema/odcs-json-schema-v2.2.2.json"
+      }
     },
     {
       "name": "Outblocks project configuration",
@@ -6385,6 +6507,12 @@
       "description": "Qt Creator project json file",
       "fileMatch": ["**/.qtcreator/project.json"],
       "url": "https://download.qt.io/official_releases/qtcreator/latest/installer_source/jsonschemas/project.json"
+    },
+    {
+      "name": "mprocs Configuration file",
+      "description": "mprocs (https://github.com/pvolok/mprocs) Configuration file using JSON/YAML",
+      "fileMatch": ["mprocs.json", "mprocs.yaml", "mprocs.yml"],
+      "url": "https://json.schemastore.org/mprocs-0.6.4.json"
     }
   ]
 }
