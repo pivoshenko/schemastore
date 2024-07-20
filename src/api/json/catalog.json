@@ -162,112 +162,6 @@
       "url": "https://raw.githubusercontent.com/angular/angular-cli/v10.1.6/packages/angular/cli/lib/config/schema.json"
     },
     {
-      "name": "Ansible Execution Environment",
-      "description": "Ansible execution-environment.yml file",
-      "fileMatch": ["**/execution-environment.yml"],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/execution-environment.json"
-    },
-    {
-      "name": "Ansible Meta",
-      "description": "Ansible meta/main.yml file",
-      "fileMatch": ["**/meta/main.yml"],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/meta.json"
-    },
-    {
-      "name": "Ansible Meta Runtime",
-      "description": "Ansible meta/runtime.yml file",
-      "fileMatch": ["**/meta/runtime.yml"],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/meta-runtime.json"
-    },
-    {
-      "name": "Ansible Argument Specs",
-      "description": "Ansible meta/argument_specs.yml file",
-      "fileMatch": ["**/meta/argument_specs.yml"],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/role-arg-spec.json"
-    },
-    {
-      "name": "Ansible Requirements",
-      "description": "Ansible requirements file",
-      "fileMatch": ["requirements.yml"],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/requirements.json"
-    },
-    {
-      "name": "Ansible Vars File",
-      "description": "Ansible variables File",
-      "fileMatch": [
-        "**/vars/*.yml",
-        "**/vars/*.yaml",
-        "**/defaults/*.yml",
-        "**/defaults/*.yaml",
-        "**/host_vars/*.yml",
-        "**/host_vars/*.yaml",
-        "**/group_vars/*.yml",
-        "**/group_vars/*.yaml"
-      ],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/vars.json"
-    },
-    {
-      "name": "Ansible Tasks File",
-      "description": "Ansible tasks file",
-      "fileMatch": [
-        "**/tasks/*.yml",
-        "**/tasks/*.yaml",
-        "**/handlers/*.yml",
-        "**/handlers/*.yaml"
-      ],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks"
-    },
-    {
-      "name": "Ansible Playbook",
-      "description": "Ansible playbook files",
-      "fileMatch": [
-        "playbook.yml",
-        "playbook.yaml",
-        "site.yml",
-        "site.yaml",
-        "**/playbooks/*.yml",
-        "**/playbooks/*.yaml"
-      ],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook"
-    },
-    {
-      "name": "Ansible Rulebook",
-      "description": "Ansible rulebook files",
-      "fileMatch": ["**/rulebooks/*.yml", "**/rulebooks/*.yaml"],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-rulebook/main/ansible_rulebook/schema/ruleset_schema.json"
-    },
-    {
-      "name": "Ansible Inventory",
-      "description": "Ansible inventory files",
-      "fileMatch": ["inventory.yml", "inventory.yaml"],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/inventory.json"
-    },
-    {
-      "name": "Ansible Collection Galaxy",
-      "description": "Ansible Collection Galaxy metadata",
-      "fileMatch": ["galaxy.yml"],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/galaxy.json"
-    },
-    {
-      "name": "Ansible-lint Configuration",
-      "description": "Ansible-lint Configuration",
-      "fileMatch": [".ansible-lint", "**/.config/ansible-lint.yml"],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json"
-    },
-    {
-      "name": "Ansible Navigator Configuration",
-      "description": "Ansible Navigator Configuration",
-      "fileMatch": [
-        ".ansible-navigator.json",
-        ".ansible-navigator.yaml",
-        ".ansible-navigator.yml",
-        "ansible-navigator.json",
-        "ansible-navigator.yaml",
-        "ansible-navigator.yml"
-      ],
-      "url": "https://raw.githubusercontent.com/ansible/ansible-navigator/main/src/ansible_navigator/data/ansible-navigator.json"
-    },
-    {
       "name": "apple-app-site-association",
       "description": "Apple Universal Link, App Site Association",
       "fileMatch": ["apple-app-site-association"],
@@ -790,6 +684,12 @@
       "url": "https://json.schemastore.org/bowerrc.json"
     },
     {
+      "name": "Boyka Framework",
+      "description": "Boyka Framework config file",
+      "fileMatch": ["boyka-config.json"],
+      "url": "https://json.schemastore.org/boyka-config.json"
+    },
+    {
       "name": "behat.yml",
       "description": "Behat configuration file",
       "fileMatch": ["behat.yml", "*.behat.yml"],
@@ -1223,7 +1123,7 @@
       "name": "Helm Unittest Test Suite",
       "description": "A Helm Unittest Test Suite file",
       "fileMatch": ["**/charts/*/tests/*.yaml"],
-      "url": "https://raw.githubusercontent.com/helm-unittest/helm-unittest/v0.3.3/schema/helm-testsuite.json"
+      "url": "https://raw.githubusercontent.com/helm-unittest/helm-unittest/v0.5.1/schema/helm-testsuite.json"
     },
     {
       "name": "CircleCI config.yml",
@@ -2246,7 +2146,11 @@
       "name": "Gaspar",
       "description": "Configuration for Gaspar",
       "fileMatch": ["gaspar.config.json"],
-      "url": "https://json.schemastore.org/gaspar-1.0.json"
+      "url": "https://json.schemastore.org/gaspar-3.0.json",
+      "versions": {
+        "1.0": "https://json.schemastore.org/gaspar-1.0.json",
+        "3.0": "https://json.schemastore.org/gaspar-3.0.json"
+      }
     },
     {
       "name": "GatewayCore API Gateway",
@@ -2399,6 +2303,112 @@
       "description": "configuring Gitpod.io",
       "fileMatch": [".gitpod.yml"],
       "url": "https://gitpod.io/schemas/gitpod-schema.json"
+    },
+    {
+      "name": "Ansible Execution Environment",
+      "description": "Ansible execution-environment.yml file",
+      "fileMatch": ["**/execution-environment.yml"],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/execution-environment.json"
+    },
+    {
+      "name": "Ansible Meta",
+      "description": "Ansible meta/main.yml file",
+      "fileMatch": ["**/meta/main.yml"],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/meta.json"
+    },
+    {
+      "name": "Ansible Meta Runtime",
+      "description": "Ansible meta/runtime.yml file",
+      "fileMatch": ["**/meta/runtime.yml"],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/meta-runtime.json"
+    },
+    {
+      "name": "Ansible Argument Specs",
+      "description": "Ansible meta/argument_specs.yml file",
+      "fileMatch": ["**/meta/argument_specs.yml"],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/role-arg-spec.json"
+    },
+    {
+      "name": "Ansible Requirements",
+      "description": "Ansible requirements file",
+      "fileMatch": ["requirements.yml"],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/requirements.json"
+    },
+    {
+      "name": "Ansible Vars File",
+      "description": "Ansible variables File",
+      "fileMatch": [
+        "**/vars/*.yml",
+        "**/vars/*.yaml",
+        "**/defaults/*.yml",
+        "**/defaults/*.yaml",
+        "**/host_vars/*.yml",
+        "**/host_vars/*.yaml",
+        "**/group_vars/*.yml",
+        "**/group_vars/*.yaml"
+      ],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/vars.json"
+    },
+    {
+      "name": "Ansible Tasks File",
+      "description": "Ansible tasks file",
+      "fileMatch": [
+        "**/tasks/*.yml",
+        "**/tasks/*.yaml",
+        "**/handlers/*.yml",
+        "**/handlers/*.yaml"
+      ],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks"
+    },
+    {
+      "name": "Ansible Playbook",
+      "description": "Ansible playbook files",
+      "fileMatch": [
+        "playbook.yml",
+        "playbook.yaml",
+        "site.yml",
+        "site.yaml",
+        "**/playbooks/*.yml",
+        "**/playbooks/*.yaml"
+      ],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook"
+    },
+    {
+      "name": "Ansible Rulebook",
+      "description": "Ansible rulebook files",
+      "fileMatch": ["**/rulebooks/*.yml", "**/rulebooks/*.yaml"],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-rulebook/main/ansible_rulebook/schema/ruleset_schema.json"
+    },
+    {
+      "name": "Ansible Inventory",
+      "description": "Ansible inventory files",
+      "fileMatch": ["inventory.yml", "inventory.yaml"],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/inventory.json"
+    },
+    {
+      "name": "Ansible Collection Galaxy",
+      "description": "Ansible Collection Galaxy metadata",
+      "fileMatch": ["galaxy.yml"],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/galaxy.json"
+    },
+    {
+      "name": "Ansible-lint Configuration",
+      "description": "Ansible-lint Configuration",
+      "fileMatch": [".ansible-lint", "**/.config/ansible-lint.yml"],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json"
+    },
+    {
+      "name": "Ansible Navigator Configuration",
+      "description": "Ansible Navigator Configuration",
+      "fileMatch": [
+        ".ansible-navigator.json",
+        ".ansible-navigator.yaml",
+        ".ansible-navigator.yml",
+        "ansible-navigator.json",
+        "ansible-navigator.yaml",
+        "ansible-navigator.yml"
+      ],
+      "url": "https://raw.githubusercontent.com/ansible/ansible-navigator/main/src/ansible_navigator/data/ansible-navigator.json"
     },
     {
       "name": "global.json",
@@ -3095,6 +3105,12 @@
       "description": "Meltano plugin discovery definition file",
       "fileMatch": ["*discovery.yml"],
       "url": "https://raw.githubusercontent.com/meltano/meltano/main/src/meltano/schemas/discovery.schema.json"
+    },
+    {
+      "name": "Metadata for a Bazel module",
+      "description": "Metadata file for a Bazel module",
+      "fileMatch": ["**/modules/*/metadata.json"],
+      "url": "https://raw.githubusercontent.com/bazelbuild/bazel-central-registry/main/metadata.schema.json"
     },
     {
       "name": "MetricsHub Configuration",
@@ -5842,8 +5858,8 @@
     },
     {
       "name": "Updatecli Compose",
-      "description": "Updatecli Compose file",
-      "fileMatch": ["update-compose.yaml"],
+      "description": "Updatecli Compose file, more information on https://www.updatecli.io/docs/core/compose/",
+      "fileMatch": ["update-compose.yaml", "updatecli-compose.yaml"],
       "url": "https://www.updatecli.io/schema/latest/compose/config.json"
     },
     {
@@ -6622,10 +6638,52 @@
       "url": "https://api.app-prg1.zerops.io/api/rest/public/settings/import-project-yml-json-schema.json"
     },
     {
+      "name": "Microsoft RulesEngine workflow rules",
+      "description": "Microsoft RulesEngine workflow rules definition https://github.com/microsoft/RulesEngine",
+      "fileMatch": ["*.workflow-rules.json", "**/workflow-rules/*.json"],
+      "url": "https://raw.githubusercontent.com/microsoft/RulesEngine/main/schema/workflow-schema.json"
+    },
+    {
+      "name": "Microsoft RulesEngine workflow rules list",
+      "description": "Microsoft RulesEngine workflow list definition https://github.com/microsoft/RulesEngine",
+      "fileMatch": ["*.workflow-rules-list.json"],
+      "url": "https://raw.githubusercontent.com/microsoft/RulesEngine/main/schema/workflow-list-schema.json"
+    },
+    {
       "name": "spicepod.yaml",
       "description": "Spice.ai OSS Spicepod Manifest file",
       "fileMatch": ["spicepod.yml", "spicepod.yaml"],
       "url": "https://raw.githubusercontent.com/spiceai/spiceai/trunk/.schema/spicepod.schema.json"
+    },
+    {
+      "name": "Concord",
+      "description": "Concord - https://github.com/walmartlabs/concord,  workflow orcehstrator",
+      "fileMatch": [
+        "*.concord.yaml",
+        "*.concord.yml",
+        ".concord.yml",
+        ".concord.yaml",
+        "concord.yml",
+        "concord.yaml",
+        "**/*.concord.yaml",
+        "**/*.concord.yml"
+      ],
+      "url": "https://repo1.maven.org/maven2/com/walmartlabs/concord/runtime/v2/concord-runtime-model-v2/2.14.0/concord-runtime-model-v2-2.14.0-schema.json"
+    },
+    {
+      "name": "DipDup",
+      "description": "DipDup project configuration file",
+      "fileMatch": [
+        "**/dipdup.yaml",
+        "**/dipdup.yml",
+        "**/dipdup.*.yaml",
+        "**/dipdup.*.yml"
+      ],
+      "url": "https://raw.githubusercontent.com/dipdup-io/dipdup/next/schemas/dipdup-3.0.json",
+      "versions": {
+        "3.0": "https://raw.githubusercontent.com/dipdup-io/dipdup/next/schemas/dipdup-3.0.json",
+        "2.0": "https://raw.githubusercontent.com/dipdup-io/dipdup/next/schemas/dipdup-2.0.json"
+      }
     }
   ]
 }
