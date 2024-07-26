@@ -1679,6 +1679,12 @@
       "url": "https://json.schemastore.org/dockerd.json"
     },
     {
+      "name": "docker bake",
+      "description": "Docker Bake configuration file. Documentation: https://docs.docker.com/build/bake/reference",
+      "fileMatch": ["docker-bake.json", "docker-bake.override.json"],
+      "url": "https://json.schemastore.org/docker-bake.json"
+    },
+    {
       "name": "docker sequencer",
       "description": "docker-seq. Documentation: https://gitlab.com/sbenv/veroxis/docker-seq",
       "fileMatch": [
@@ -4158,6 +4164,12 @@
       "description": "rockcraft project. Documentation: https://canonical-rockcraft.readthedocs-hosted.com",
       "fileMatch": ["rockcraft.yaml", "rockcraft.yml"],
       "url": "https://raw.githubusercontent.com/canonical/rockcraft/main/schema/rockcraft.json"
+    },
+    {
+      "name": "runny",
+      "description": "runny, a rool for running things",
+      "fileMatch": [".runny.yaml", ".runny.yml"],
+      "url": "https://raw.githubusercontent.com/simonwhitaker/runny/main/schema/runny.schema.json"
     },
     {
       "name": "rustfmt",
@@ -6657,7 +6669,7 @@
     },
     {
       "name": "Concord",
-      "description": "Concord - https://github.com/walmartlabs/concord,  workflow orcehstrator",
+      "description": "Concord - https://github.com/walmartlabs/concord,  workflow orchestrator",
       "fileMatch": [
         "*.concord.yaml",
         "*.concord.yml",
@@ -6669,6 +6681,24 @@
         "**/*.concord.yml"
       ],
       "url": "https://repo1.maven.org/maven2/com/walmartlabs/concord/runtime/v2/concord-runtime-model-v2/2.14.0/concord-runtime-model-v2-2.14.0-schema.json"
+    },
+    {
+      "name": "CRS WAF test file",
+      "description": "Definition of a test for verifying WAF behavior",
+      "fileMatch": ["*.waft"],
+      "url": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.0/waf-tests-schema-v2.1.0.json",
+      "versions": {
+        "2.1.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.0/waf-tests-schema-v2.1.0.json"
+      }
+    },
+    {
+      "name": "CRS WAF test platform overrides file",
+      "description": "Definition of platform specific overrides for WAF tests",
+      "fileMatch": ["*.wafto"],
+      "url": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.0/waf-platform-overrides-schema-v2.1.0.json",
+      "versions": {
+        "2.1.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.0/waf-platform-overrides-schema-v2.1.0.json"
+      }
     },
     {
       "name": "DipDup",
@@ -6684,6 +6714,12 @@
         "3.0": "https://raw.githubusercontent.com/dipdup-io/dipdup/next/schemas/dipdup-3.0.json",
         "2.0": "https://raw.githubusercontent.com/dipdup-io/dipdup/next/schemas/dipdup-2.0.json"
       }
+    },
+    {
+      "name": "Tycho",
+      "description": "Tycho.yaml file",
+      "fileMatch": ["**/tycho.yml", "**/tycho.yaml"],
+      "url": "https://deployments.allegrogroup.com/tycho/schema"
     }
   ]
 }
