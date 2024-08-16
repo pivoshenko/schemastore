@@ -376,7 +376,7 @@
       "type": ["boolean", "null"]
     },
     "include": {
-      "description": "A list of file patterns to include when linting.\n\nInclusion are based on globs, and should be single-path patterns, like `*.pyw`, to include any file with the `.pyw` extension. `pyproject.toml` is included here not for configuration but because we lint whether e.g. the `[project]` matches the schema.\n\nFor more information on the glob syntax, refer to the [`globset` documentation](https://docs.rs/globset/latest/globset/#syntax).",
+      "description": "A list of file patterns to include when linting.\n\nInclusion are based on globs, and should be single-path patterns, like `*.pyw`, to include any file with the `.pyw` extension. `pyproject.toml` is included here not for configuration but because we lint whether e.g. the `[project]` matches the schema.\n\nNotebook files (`.ipynb` extension) are included by default on Ruff 0.6.0+.\n\nFor more information on the glob syntax, refer to the [`globset` documentation](https://docs.rs/globset/latest/globset/#syntax).",
       "type": ["array", "null"],
       "items": {
         "type": "string"
@@ -454,7 +454,7 @@
       }
     },
     "output-format": {
-      "description": "The style in which violation messages should be formatted: `\"full\"` (shows source), `\"concise\"` (default), `\"grouped\"` (group messages by file), `\"json\"` (machine-readable), `\"junit\"` (machine-readable XML), `\"github\"` (GitHub Actions annotations), `\"gitlab\"` (GitLab CI code quality report), `\"pylint\"` (Pylint text format) or `\"azure\"` (Azure Pipeline logging commands).",
+      "description": "The style in which violation messages should be formatted: `\"full\"` (default) (shows source), `\"concise\"`, `\"grouped\"` (group messages by file), `\"json\"` (machine-readable), `\"junit\"` (machine-readable XML), `\"github\"` (GitHub Actions annotations), `\"gitlab\"` (GitLab CI code quality report), `\"pylint\"` (Pylint text format) or `\"azure\"` (Azure Pipeline logging commands).",
       "anyOf": [
         {
           "$ref": "#/definitions/OutputFormat"
@@ -579,7 +579,7 @@
       "type": ["boolean", "null"]
     },
     "src": {
-      "description": "The directories to consider when resolving first- vs. third-party imports.\n\nAs an example: given a Python package structure like:\n\n```text my_project ├── pyproject.toml └── src └── my_package ├── __init__.py ├── foo.py └── bar.py ```\n\nThe `./src` directory should be included in the `src` option (e.g., `src = [\"src\"]`), such that when resolving imports, `my_package.foo` is considered a first-party import.\n\nWhen omitted, the `src` directory will typically default to the directory containing the nearest `pyproject.toml`, `ruff.toml`, or `.ruff.toml` file (the \"project root\"), unless a configuration file is explicitly provided (e.g., via the `--config` command-line flag).\n\nThis field supports globs. For example, if you have a series of Python packages in a `python_modules` directory, `src = [\"python_modules/*\"]` would expand to incorporate all of the packages in that directory. User home directory and environment variables will also be expanded.",
+      "description": "The directories to consider when resolving first- vs. third-party imports.\n\nWhen omitted, the `src` directory will typically default to including both:\n\n1. The directory containing the nearest `pyproject.toml`, `ruff.toml`, or `.ruff.toml` file (the \"project root\"). 2. The `\"src\"` subdirectory of the project root.\n\nThese defaults ensure that uv supports both flat layouts and `src` layouts out-of-the-box. (If a configuration file is explicitly provided (e.g., via the `--config` command-line flag), the current working directory will be considered the project root.)\n\nAs an example, consider an alternative project structure, like:\n\n```text my_project ├── pyproject.toml └── lib └── my_package ├── __init__.py ├── foo.py └── bar.py ```\n\nIn this case, the `./lib` directory should be included in the `src` option (e.g., `src = [\"lib\"]`), such that when resolving imports, `my_package.foo` is considered first-party.\n\nThis field supports globs. For example, if you have a series of Python packages in a `python_modules` directory, `src = [\"python_modules/*\"]` would expand to incorporate all packages in that directory. User home directory and environment variables will also be expanded.",
       "type": ["array", "null"],
       "items": {
         "type": "string"
@@ -782,6 +782,13 @@
     "Flake8BuiltinsOptions": {
       "type": "object",
       "properties": {
+        "builtins-allowed-modules": {
+          "description": "List of builtin module names to allow.",
+          "type": ["array", "null"],
+          "items": {
+            "type": "string"
+          }
+        },
         "builtins-ignorelist": {
           "description": "Ignore list of builtins.",
           "type": ["array", "null"],
@@ -858,7 +865,7 @@
       "type": "object",
       "properties": {
         "allow-multiline": {
-          "description": "Whether to allow implicit string concatenations for multiline strings. By default, implicit concatenations of multiline strings are allowed (but continuation lines, delimited with a backslash, are prohibited).\n\nNote that setting `allow-multiline = false` should typically be coupled with disabling `explicit-string-concatenation` (`ISC003`). Otherwise, both explicit and implicit multiline string concatenations will be seen as violations.",
+          "description": "Whether to allow implicit string concatenations for multiline strings. By default, implicit concatenations of multiline strings are allowed (but continuation lines, delimited with a backslash, are prohibited).\n\nSetting `allow-multiline = false` will automatically disable the `explicit-string-concatenation` (`ISC003`) rule. Otherwise, both implicit and explicit multiline string concatenations would be seen as violations, making it impossible to write a linter-compliant multiline string.",
           "type": ["boolean", "null"]
         }
       },
@@ -903,11 +910,11 @@
       "type": "object",
       "properties": {
         "fixture-parentheses": {
-          "description": "Boolean flag specifying whether `@pytest.fixture()` without parameters should have parentheses. If the option is set to `true` (the default), `@pytest.fixture()` is valid and `@pytest.fixture` is invalid. If set to `false`, `@pytest.fixture` is valid and `@pytest.fixture()` is invalid.\n\nIf [preview](https://docs.astral.sh/ruff/preview/) is enabled, defaults to `false`.",
+          "description": "Boolean flag specifying whether `@pytest.fixture()` without parameters should have parentheses. If the option is set to `true` (the default), `@pytest.fixture()` is valid and `@pytest.fixture` is invalid. If set to `false`, `@pytest.fixture` is valid and `@pytest.fixture()` is invalid.",
           "type": ["boolean", "null"]
         },
         "mark-parentheses": {
-          "description": "Boolean flag specifying whether `@pytest.mark.foo()` without parameters should have parentheses. If the option is set to `true` (the default), `@pytest.mark.foo()` is valid and `@pytest.mark.foo` is invalid. If set to `false`, `@pytest.mark.foo` is valid and `@pytest.mark.foo()` is invalid.\n\nIf [preview](https://docs.astral.sh/ruff/preview/) is enabled, defaults to `false`.",
+          "description": "Boolean flag specifying whether `@pytest.mark.foo()` without parameters should have parentheses. If the option is set to `true` (the default), `@pytest.mark.foo()` is valid and `@pytest.mark.foo` is invalid. If set to `false`, `@pytest.mark.foo` is valid and `@pytest.mark.foo()` is invalid.",
           "type": ["boolean", "null"]
         },
         "parametrize-names-type": {
@@ -1356,7 +1363,7 @@
           "description": "Add the specified import line to all files.",
           "type": ["array", "null"],
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/NameImports"
           }
         },
         "section-order": {
@@ -1838,6 +1845,17 @@
             }
           ]
         },
+        "ruff": {
+          "description": "Options for the `ruff` plugin",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RuffOptions"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
         "select": {
           "description": "A list of rule codes or prefixes to enable. Prefixes can specify exact rules (like `F841`), entire categories (like `F`), or anything in between.\n\nWhen breaking ties between enabled and disabled rules (via `select` and `ignore`, respectively), more specific prefixes override less specific prefixes.",
           "type": ["array", "null"],
@@ -1880,6 +1898,9 @@
         }
       },
       "additionalProperties": false
+    },
+    "NameImports": {
+      "type": "string"
     },
     "OutputFormat": {
       "oneOf": [
@@ -2153,6 +2174,16 @@
     "RequiredVersion": {
       "type": "string"
     },
+    "RuffOptions": {
+      "type": "object",
+      "properties": {
+        "parenthesize-tuple-in-subscript": {
+          "description": "Whether to prefer accessing items keyed by tuples with parentheses around the tuple (see `RUF031`).",
+          "type": ["boolean", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
     "RuleSelector": {
       "type": "string",
       "enum": [
@@ -2162,6 +2193,9 @@
         "A001",
         "A002",
         "A003",
+        "A004",
+        "A005",
+        "A006",
         "AIR",
         "AIR0",
         "AIR00",
@@ -2289,6 +2323,8 @@
         "C417",
         "C418",
         "C419",
+        "C42",
+        "C420",
         "C9",
         "C90",
         "C901",
@@ -2370,6 +2406,19 @@
         "DJ01",
         "DJ012",
         "DJ013",
+        "DOC",
+        "DOC2",
+        "DOC20",
+        "DOC201",
+        "DOC202",
+        "DOC4",
+        "DOC40",
+        "DOC402",
+        "DOC403",
+        "DOC5",
+        "DOC50",
+        "DOC501",
+        "DOC502",
         "DTZ",
         "DTZ0",
         "DTZ00",
@@ -2557,6 +2606,11 @@
         "FA10",
         "FA100",
         "FA102",
+        "FAST",
+        "FAST0",
+        "FAST00",
+        "FAST001",
+        "FAST002",
         "FBT",
         "FBT0",
         "FBT00",
@@ -3166,13 +3220,13 @@
         "RUF022",
         "RUF023",
         "RUF024",
-        "RUF025",
         "RUF026",
         "RUF027",
         "RUF028",
         "RUF029",
         "RUF03",
         "RUF030",
+        "RUF031",
         "RUF1",
         "RUF10",
         "RUF100",

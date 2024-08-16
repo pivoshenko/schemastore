@@ -456,6 +456,17 @@
       }
     },
     {
+      "name": "CodifyCLI",
+      "description": "Transform your workflow with Codify, the ultimate configuration as code tool designed to manage local user environments",
+      "fileMatch": [
+        "codify.json",
+        "codify.yaml",
+        "*.codify.json",
+        "*.codify.yaml"
+      ],
+      "url": "https://raw.githubusercontent.com/codifyCLI/codify-schemas/main/src/schemastore/codify-schema.json"
+    },
+    {
       "name": "latexindent configuration",
       "description": "Configuration file for latexindent",
       "fileMatch": ["latexindent.yaml", ".latexindent.yaml"],
@@ -989,10 +1000,34 @@
       "url": "https://raw.githubusercontent.com/datayoga-io/datayoga/main/schemas/job.schema.json"
     },
     {
+      "name": "dbt Dependencies",
+      "description": "dbt's dependencies.yml file for external packages and cross-project refs",
+      "fileMatch": ["**/*dbt*/dependencies.{yaml,yml}"],
+      "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/dependencies-latest.json"
+    },
+    {
       "name": "dbt Project",
-      "description": "dbt project configurations",
-      "fileMatch": ["dbt_project.yml"],
+      "description": "dbt's project configuration file",
+      "fileMatch": ["dbt_project.{yaml,yml}"],
       "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/dbt_project-latest.json"
+    },
+    {
+      "name": "dbt Packages",
+      "description": "dbt's packages.yml file for external packages",
+      "fileMatch": ["**/*dbt*/packages.{yaml,yml}"],
+      "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/packages-latest.json"
+    },
+    {
+      "name": "dbt Selectors",
+      "description": "dbt's selectors.yml file for configuring YAML selectors",
+      "fileMatch": ["**/*dbt*/selectors.{yaml,yml}"],
+      "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/selectors-latest.json"
+    },
+    {
+      "name": "dbt YAML files",
+      "description": "dbt YAML files configurations",
+      "fileMatch": ["**/*dbt*/{macros,models,seeds,snapshots}/**/*.{yaml,yml}"],
+      "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/dbt_yml_files-latest.json"
     },
     {
       "name": "Dein Config",
@@ -2898,6 +2933,15 @@
       "url": "https://raw.githubusercontent.com/graeter-group/kimmdy/main/src/kimmdy/kimmdy-yaml-schema.json"
     },
     {
+      "name": "Kestra flow file",
+      "description": "Kestra Flow definition file, see: kestra.io/docs/workflow-components/flow#flow-sample",
+      "fileMatch": ["**/flows/*.yml"],
+      "url": "https://json.schemastore.org/kestra-0.18.json",
+      "versions": {
+        "0.18": "https://json.schemastore.org/kestra-0.18.json"
+      }
+    },
+    {
       "name": "KrakenD",
       "description": "KrakenD API Gateway configuration file",
       "fileMatch": [
@@ -4477,6 +4521,24 @@
       "url": "https://json.schemastore.org/sourcery_yaml_schema.json"
     },
     {
+      "name": "Speakeasy Lint Configuration File",
+      "description": "Configuration file for Speakeasy's OpenAPI document linting. Find out more at https://www.speakeasy.com/docs/linting",
+      "fileMatch": ["**/.speakeasy/lint.yaml"],
+      "url": "https://raw.githubusercontent.com/speakeasy-api/sdk-gen-config/main/schemas/lint.schema.json"
+    },
+    {
+      "name": "Speakeasy Test Generation Configuration File",
+      "description": "Configuration file for Speakeasy's test generation",
+      "fileMatch": ["**/.speakeasy/tests.yaml"],
+      "url": "https://raw.githubusercontent.com/speakeasy-api/sdk-gen-config/main/schemas/tests.schema.json"
+    },
+    {
+      "name": "Speakeasy Workflow File",
+      "description": "Workflow configuration file. Read more at https://www.speakeasy.com/docs/workflow-file-reference",
+      "fileMatch": ["**/.speakeasy/workflow.yaml"],
+      "url": "https://raw.githubusercontent.com/speakeasy-api/sdk-gen-config/main/schemas/workflow.schema.json"
+    },
+    {
       "name": "SpecIF",
       "description": "The Specification Integration Facility (SpecIF) integrates partial system models from different methods and tools in a semantic net. Documentation: https://specif.de and https://github.com/GfSE",
       "fileMatch": ["*.specif", "*.specif.json"],
@@ -5110,40 +5172,17 @@
       "url": "https://json.schemastore.org/servicehub.config.schema.json"
     },
     {
-      "name": ".cryproj engine-5.2",
-      "description": "A CRYENGINE projects (.cryproj files)",
-      "fileMatch": ["*.cryproj"],
-      "url": "https://json.schemastore.org/cryproj.52.schema.json"
-    },
-    {
-      "name": ".cryproj engine-5.3",
-      "description": "A CRYENGINE projects (.cryproj files)",
-      "fileMatch": ["*.cryproj"],
-      "url": "https://json.schemastore.org/cryproj.53.schema.json"
-    },
-    {
-      "name": ".cryproj engine-5.4",
-      "description": "A CRYENGINE projects (.cryproj files)",
-      "fileMatch": ["*.cryproj"],
-      "url": "https://json.schemastore.org/cryproj.54.schema.json"
-    },
-    {
-      "name": ".cryproj engine-5.5",
-      "description": "A CRYENGINE projects (.cryproj files)",
-      "fileMatch": ["*.cryproj"],
-      "url": "https://json.schemastore.org/cryproj.55.schema.json"
-    },
-    {
-      "name": ".cryproj engine-dev",
-      "description": "A CRYENGINE projects (.cryproj files)",
-      "fileMatch": ["*.cryproj"],
-      "url": "https://json.schemastore.org/cryproj.dev.schema.json"
-    },
-    {
       "name": ".cryproj (generic)",
       "description": "A CRYENGINE projects (.cryproj files)",
       "fileMatch": ["*.cryproj"],
-      "url": "https://json.schemastore.org/cryproj.json"
+      "url": "https://json.schemastore.org/cryproj.json",
+      "versions": {
+        "dev": "https://json.schemastore.org/cryproj.dev.schema.json",
+        "5.2": "https://json.schemastore.org/cryproj.52.schema.json",
+        "5.3": "https://json.schemastore.org/cryproj.53.schema.json",
+        "5.4": "https://json.schemastore.org/cryproj.54.schema.json",
+        "5.5": "https://json.schemastore.org/cryproj.55.schema.json"
+      }
     },
     {
       "name": "typedoc.json",
@@ -5184,7 +5223,7 @@
     {
       "name": "mirrord config",
       "description": "mirrord",
-      "fileMatch": ["*.mirrord.+(toml|json|y?(a)ml)"],
+      "fileMatch": ["*.mirrord.{toml,json,yaml,yml}"],
       "url": "https://raw.githubusercontent.com/metalbear-co/mirrord/main/mirrord-schema.json"
     },
     {
@@ -5378,7 +5417,7 @@
       "name": "Windows Package Manager Locale Manifest",
       "description": "Windows Package Manager Locale Manifest file, used for detailing locale specific metadata",
       "fileMatch": [
-        "**/manifests/?/*/*/*/*.*.locale@(.en-US|fr-FR|it-IT|ja-JP|ko-KR|pt-BR|ru-RU|zh-CN|zh-TW).yaml"
+        "**/manifests/?/*/*/*/*.*.locale.{en-US,fr-FR,it-IT,ja-JP,ko-KR,pt-BR,ru-RU,zh-CN,zh-TW}.yaml"
       ],
       "url": "https://json.schemastore.org/winget-pkgs-locale-1.0.0.json"
     },
@@ -6686,19 +6725,19 @@
     {
       "name": "CRS WAF test file",
       "description": "Definition of a test for verifying WAF behavior",
-      "fileMatch": ["*.waft"],
-      "url": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.0/waf-tests-schema-v2.1.0.json",
+      "fileMatch": ["*.waft", ".waft.yaml", ".waft.yml"],
+      "url": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/main/spec/v2.1.0/waf-tests-schema-v2.1.0.json",
       "versions": {
-        "2.1.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.0/waf-tests-schema-v2.1.0.json"
+        "2.1.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/main/spec/v2.1.0/waf-tests-schema-v2.1.0.json"
       }
     },
     {
       "name": "CRS WAF test platform overrides file",
       "description": "Definition of platform specific overrides for WAF tests",
-      "fileMatch": ["*.wafto"],
-      "url": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.0/waf-platform-overrides-schema-v2.1.0.json",
+      "fileMatch": ["*.wafto", ".wafto.yaml", ".wafto.yml"],
+      "url": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.1.0/waf-platform-overrides-schema-v2.1.0.json",
       "versions": {
-        "2.1.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.0/waf-platform-overrides-schema-v2.1.0.json"
+        "2.1.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.1.0/waf-platform-overrides-schema-v2.1.0.json"
       }
     },
     {
