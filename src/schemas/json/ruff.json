@@ -910,11 +910,11 @@
       "type": "object",
       "properties": {
         "fixture-parentheses": {
-          "description": "Boolean flag specifying whether `@pytest.fixture()` without parameters should have parentheses. If the option is set to `true` (the default), `@pytest.fixture()` is valid and `@pytest.fixture` is invalid. If set to `false`, `@pytest.fixture` is valid and `@pytest.fixture()` is invalid.",
+          "description": "Boolean flag specifying whether `@pytest.fixture()` without parameters should have parentheses. If the option is set to `false` (the default), `@pytest.fixture` is valid and `@pytest.fixture()` is invalid. If set to `true`, `@pytest.fixture()` is valid and `@pytest.fixture` is invalid.",
           "type": ["boolean", "null"]
         },
         "mark-parentheses": {
-          "description": "Boolean flag specifying whether `@pytest.mark.foo()` without parameters should have parentheses. If the option is set to `true` (the default), `@pytest.mark.foo()` is valid and `@pytest.mark.foo` is invalid. If set to `false`, `@pytest.mark.foo` is valid and `@pytest.mark.foo()` is invalid.",
+          "description": "Boolean flag specifying whether `@pytest.mark.foo()` without parameters should have parentheses. If the option is set to `false` (the default), `@pytest.mark.foo` is valid and `@pytest.mark.foo()` is invalid. If set to `true`, `@pytest.mark.foo()` is valid and `@pytest.mark.foo` is invalid.",
           "type": ["boolean", "null"]
         },
         "parametrize-names-type": {
@@ -1988,7 +1988,7 @@
       "type": "object",
       "properties": {
         "ignore-overlong-task-comments": {
-          "description": "Whether line-length violations (`E501`) should be triggered for comments starting with [`task-tags`](#lint_task-tags) (by default: \\[\"TODO\", \"FIXME\", and \"XXX\"\\]).",
+          "description": "Whether line-length violations (`E501`) should be triggered for comments starting with [`task-tags`](#lint_task-tags) (by default: \"TODO\", \"FIXME\", and \"XXX\").",
           "type": ["boolean", "null"]
         },
         "max-doc-length": {
@@ -2611,6 +2611,7 @@
         "FAST00",
         "FAST001",
         "FAST002",
+        "FAST003",
         "FBT",
         "FBT0",
         "FBT00",
@@ -3227,6 +3228,7 @@
         "RUF03",
         "RUF030",
         "RUF031",
+        "RUF032",
         "RUF1",
         "RUF10",
         "RUF100",
