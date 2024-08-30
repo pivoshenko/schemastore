@@ -290,6 +290,12 @@
       "url": "https://json.schemastore.org/avro-avsc.json"
     },
     {
+      "name": "AWS AppConfig Feature Flags-v1",
+      "description": "AWS CDK AppConfig Feature Flags",
+      "fileMatch": ["*.appConfig.featureFlags.json"],
+      "url": "https://json.schemastore.org/aws-cdk-appconfig-featureflags-1.0.0.json"
+    },
+    {
       "name": "Azure Container App template for defining an immutable revision",
       "description": "Azure Container App template for defining an immutable revision",
       "fileMatch": ["*.containerapp-template.json"],
@@ -367,6 +373,22 @@
       }
     },
     {
+      "name": "Azure Landing Zones Library metadata",
+      "description": "Azure Landing Zones Library metadata",
+      "fileMatch": ["alz_library_metadata.json"],
+      "url": "https://raw.githubusercontent.com/Azure/Azure-Landing-Zones-Library/main/schemas/library_metadata.json"
+    },
+    {
+      "name": "Azure Landing Zones Library policy default values",
+      "description": "Azure Landing Zones Library policy default values",
+      "fileMatch": [
+        "alz_policy_default_values.json",
+        "alz_policy_default_values.yaml",
+        "alz_policy_default_values.yml"
+      ],
+      "url": "https://raw.githubusercontent.com/Azure/Azure-Landing-Zones-Library/main/schemas/default_policy_values.json"
+    },
+    {
       "name": "Azure Landing Zones Library architecture definition",
       "description": "Azure Landing Zones Library architecture definition",
       "fileMatch": [
@@ -378,7 +400,7 @@
     },
     {
       "name": "Azure Landing Zones Library archetype definition",
-      "description": "Azure Landing Zones Library architecture definition",
+      "description": "Azure Landing Zones Library archetype definition",
       "fileMatch": [
         "*.alz_archetype_definition.json",
         "*.alz_archetype_definition.yaml",
@@ -783,6 +805,12 @@
       "description": "bundleconfig.json files",
       "fileMatch": ["bundleconfig.json"],
       "url": "https://json.schemastore.org/bundleconfig.json"
+    },
+    {
+      "name": "bunfig.toml",
+      "description": "bunfig.toml file",
+      "fileMatch": ["bunfig.toml"],
+      "url": "https://json.schemastore.org/bunfig.json"
     },
     {
       "name": "BungeeCord plugin.yml",
@@ -3110,6 +3138,12 @@
       "url": "https://json.schemastore.org/lsdlschema.json"
     },
     {
+      "name": "MapEHR Mapping",
+      "description": "Mapping for MapEHR.com",
+      "fileMatch": [".map.yml", ".map.yaml", ".map.json"],
+      "url": "https://json.schemastore.org/mapehr.json"
+    },
+    {
       "name": "A micro editor config",
       "description": "A micro editor config",
       "fileMatch": ["**/micro/settings.json"],
@@ -3164,8 +3198,12 @@
       "name": "MetricsHub Connector Configuration",
       "description": "MetricsHub connector configuration file",
       "fileMatch": [
-        "**/*[Mm]etrics[Hh]ub*/**/connector*/**/*.yaml",
-        "**/*[Mm]etrics[Hh]ub*/**/connector*/**/*.yml"
+        "**/metricshub/connectors/**/*.yaml",
+        "**/metricshub/connectors/**/*.yml",
+        "**/hardware-connectors/**/*.yaml",
+        "**/hardware-connectors/**/*.yml",
+        "**/metricshub-community-connectors/**/*.yaml",
+        "**/metricshub-community-connectors/**/*.yml"
       ],
       "url": "https://json.schemastore.org/metricshub-connector.json"
     },
@@ -6314,7 +6352,7 @@
     {
       "name": "lazygit",
       "description": "lazygit settings",
-      "fileMatch": ["**/lazygit/config.yml"],
+      "fileMatch": ["**/lazygit/config.yml", "lazygit.yml", ".lazygit.yml"],
       "url": "https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json"
     },
     {
@@ -6752,6 +6790,12 @@
       "description": "elm.json file",
       "fileMatch": ["elm.json"],
       "url": "https://json.schemastore.org/elm.json"
+    },
+    {
+      "name": "Cloud Run Spec v1",
+      "description": "Specification for Cloud Run Admin API v1",
+      "fileMatch": ["cloud-run-v1.yml", "cloud-run-v1.yaml"],
+      "url": "https://json.schemastore.org/cloud-run-v1.json"
     }
   ]
 }
