@@ -115,6 +115,7 @@
     "kestra-0.18.0.json",
     "kestra-0.18.1.json",
     "kestra-0.18.2.json",
+    "kestra-0.18.3.json",
     "kong_json_schema.json",
     "kustomization.json",
     "label-commenter-config.json",
@@ -265,7 +266,8 @@
     "swagger-2.0.json",
     "vega.json",
     "metaschema-draft-07-unofficial-strict.json",
-    "glazewm.json"
+    "glazewm.json",
+    "youtrack-app.json"
   ],
   "fileMatchConflict": [
     // Name conflicts must be avoided. Do not add additional items here
@@ -405,6 +407,22 @@
       ]
     },
     "abc-supply-plan-3.0.0.json": {
+      "unknownFormat": ["abc-draft-js_RawDraftContentState"],
+      "unknownKeywords": [
+        "abcIsFirstDayOfMonth",
+        "abcIsLastDayOfMonth",
+        "abcIsAfter0001-01-01",
+        "abcIsBefore9999-12-31",
+        "abcDoMaterialIDsExist",
+        "abcIsAcyclic",
+        "abcAreAllocationMethodsHomogeneous",
+        "abcIsValidColor",
+        "abcNoDuplicateValuesForOrderingProperty",
+        "abcHasNonOverlappingTimeDependentValues",
+        "abcHasUninterruptedTimeDependentValues"
+      ]
+    },
+    "abc-supply-plan-4.0.0.json": {
       "unknownFormat": ["abc-draft-js_RawDraftContentState"],
       "unknownKeywords": [
         "abcIsFirstDayOfMonth",
@@ -727,6 +745,14 @@
       ]
     },
     "kestra-0.18.2.json": {
+      "unknownKeywords": [
+        "markdownDescription",
+        "$deprecated",
+        "$dynamic",
+        "$metrics"
+      ]
+    },
+    "kestra-0.18.3.json": {
       "unknownKeywords": [
         "markdownDescription",
         "$deprecated",
