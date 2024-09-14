@@ -105,9 +105,11 @@
       "name": "ABCInventoryModuleData",
       "description": "ABCInventoryModuleData defining the structure of ABCInventoryModuleData including Principal Data, inventory, and transaction data in ABC-Plan's Inventory Management Module",
       "fileMatch": ["abc-inventory-module-data-*.json"],
-      "url": "https://json.schemastore.org/abc-inventory-module-data-1.0.0.json",
+      "url": "https://json.schemastore.org/abc-inventory-module-data-3.0.0.json",
       "versions": {
-        "1.0.0": "https://json.schemastore.org/abc-inventory-module-data-1.0.0.json"
+        "1.0.0": "https://json.schemastore.org/abc-inventory-module-data-1.0.0.json",
+        "2.0.0": "https://json.schemastore.org/abc-inventory-module-data-2.0.0.json",
+        "3.0.0": "https://json.schemastore.org/abc-inventory-module-data-2.0.0.json"
       }
     },
     {
@@ -4446,7 +4448,19 @@
       "versions": {
         "v1.72.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.72.0/rule_schema_v1.yaml",
         "v1.73.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.73.0/rule_schema_v1.yaml",
-        "v1.74.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.74.0/rule_schema_v1.yaml"
+        "v1.74.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.74.0/rule_schema_v1.yaml",
+        "v1.75.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.75.0/rule_schema_v1.yaml",
+        "v1.76.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.76.0/rule_schema_v1.yaml",
+        "v1.77.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.77.0/rule_schema_v1.yaml",
+        "v1.78.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.78.0/rule_schema_v1.yaml",
+        "v1.79.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.79.0/rule_schema_v1.yaml",
+        "v1.80.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.80.0/rule_schema_v1.yaml",
+        "v1.81.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.81.0/rule_schema_v1.yaml",
+        "v1.82.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.82.0/rule_schema_v1.yaml",
+        "v1.83.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.83.0/rule_schema_v1.yaml",
+        "v1.84.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.84.0/rule_schema_v1.yaml",
+        "v1.85.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.85.0/rule_schema_v1.yaml",
+        "v1.86.0": "https://raw.githubusercontent.com/returntocorp/semgrep-interfaces/v1.86.0/rule_schema_v1.yaml"
       }
     },
     {
@@ -4821,6 +4835,15 @@
       "url": "https://raw.githubusercontent.com/osfans/trime/develop/doc/trime-schema.json"
     },
     {
+      "name": "TrueScript for *.tscript files",
+      "description": "The Ultimate Script Language for monday.com - © 2024 MakeITSimple",
+      "fileMatch": ["*.tscript", "*.tscript.yaml", "*.tscript.yml"],
+      "url": "https://json.schemastore.org/truescript.json",
+      "versions": {
+        "latest": "https://json.schemastore.org/truescript.json"
+      }
+    },
+    {
       "name": "trunk.yaml",
       "description": "Configuration trunk, a powerful linter runner. Documentation: https://docs.trunk.io",
       "fileMatch": ["trunk.yaml"],
@@ -4837,6 +4860,12 @@
       "description": "DefinitelyTyped description manager (TSD)",
       "fileMatch": ["tsd.json"],
       "url": "https://json.schemastore.org/tsd.json"
+    },
+    {
+      "name": "tsdoc.json",
+      "description": "TSDoc configuration file",
+      "fileMatch": ["tsdoc.json"],
+      "url": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json"
     },
     {
       "name": "tsdrc.json",
@@ -6823,8 +6852,26 @@
     {
       "name": "YouTrack App",
       "description": "JetBrains YouTrack App manifest file",
-      "fileMatch": ["manifest.json"],
+      "fileMatch": [],
       "url": "https://json.schemastore.org/youtrack-app.json"
+    },
+    {
+      "name": "Settings for a Cinnamon spice",
+      "description": "Settings for a Cinnamon spice",
+      "fileMatch": ["**/*@*/**/settings-schema.json"],
+      "url": "https://raw.githubusercontent.com/cinnamon-spice-settings.json"
+    },
+    {
+      "name": "Metadata for a Cinnamon spice",
+      "description": "Metadata for a Cinnamon spice",
+      "fileMatch": ["**/*@*/**/metadata.json"],
+      "url": "https://raw.githubusercontent.com/cinnamon-spice-metadata.json"
+    },
+    {
+      "name": "Yandex Workflow Language",
+      "description": "YaWL specification file",
+      "fileMatch": ["*.yawl.yaml", "*.yawl.yml"],
+      "url": "https://raw.githubusercontent.com/yandex-cloud/json-schema-store/master/serverless/workflows/yawl.json"
     }
   ]
 }
