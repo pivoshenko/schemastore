@@ -80,13 +80,19 @@ const SchemaDialects = [
   { draftVersion: 'draft-03', url: 'http://json-schema.org/draft-03/schema#', isActive: false, isTooHigh: false },
 ]
 
-/** @type {{ _: string[], help?: boolean, SchemaName?: string, ExplicitTestFile?: string, 'unstable-check-with'?: string }} */
+/** @type {{ _: string[], help?: boolean, SchemaName?: string, 'schema-name'?: string, 'unstable-check-with'?: string }} */
 const argv = /** @type {any} */ (
   minimist(process.argv.slice(2), {
-    string: ['SchemaName', 'unstable-check-with'],
+    string: ['SchemaName', 'schema-name', 'unstable-check-with'],
     boolean: ['help'],
   })
 )
+if (argv.SchemaName) {
+  process.stderr.write(
+    `WARNING: Please use "--schema-name" instead of "--SchemaName". The flag "--SchemaName" will be removed.\n`,
+  )
+  argv['schema-name'] = argv.SchemaName
+}
 
 /**
  * @typedef {Object} JsonSchemaAny
@@ -190,12 +196,11 @@ async function forEachCatalogUrl(
  * @property {(arg0: SchemaFile) => Promise<void>} [afterSchemaFile]
  */
 async function forEachFile(/** @type {ForEachTestFile} */ obj) {
-  // TODO: This doesn't ignore ignored files like .DS_Store.
   for (const dirent1 of await fs.readdir(SchemaDir, { withFileTypes: true })) {
     const schemaName = dirent1.name
     const schemaId = schemaName.replace('.json', '')
 
-    if (argv.SchemaName && argv.SchemaName !== schemaName) {
+    if (argv['schema-name'] && argv['schema-name'] !== schemaName) {
       continue
     }
 
@@ -204,35 +209,21 @@ async function forEachFile(/** @type {ForEachTestFile} */ obj) {
     }
 
     const schemaPath = path.join(SchemaDir, schemaName)
-    const schema = await toSchemaFile(schemaPath, schemaName)
+    const schema = await toSchemaFile(schemaPath)
     const data = await obj?.onSchemaFile?.(schema)
 
     if (obj?.onPositiveTestFile) {
-      if (argv.ExplicitTestFile) {
-        if (argv.ExplicitTestFile === '<all>') {
-          for (const testfile of await fs.readdir(SchemaDir)) {
-            const testfilePath = path.join(SchemaDir, testfile)
-            let file = await toTestFile(testfilePath)
-            await obj.onPositiveTestFile(schema, file, data)
-          }
-        } else {
-          const testfilePath = path.join(SchemaDir, argv.ExplicitTestFile)
+      const positiveTestDir = path.join(TestPositiveDir, schemaId)
+      if (await exists(positiveTestDir)) {
+        for (const testfile of await fs.readdir(positiveTestDir)) {
+          const testfilePath = path.join(TestPositiveDir, schemaId, testfile)
           let file = await toTestFile(testfilePath)
           await obj.onPositiveTestFile(schema, file, data)
-        }
-      } else {
-        const positiveTestDir = path.join(TestPositiveDir, schemaId)
-        if (await exists(positiveTestDir)) {
-          for (const testfile of await fs.readdir(positiveTestDir)) {
-            const testfilePath = path.join(TestPositiveDir, schemaId, testfile)
-            let file = await toTestFile(testfilePath)
-            await obj.onPositiveTestFile(schema, file, data)
-          }
         }
       }
     }
 
-    if (!argv.ExplicitTestFile && obj?.onNegativeTestFile) {
+    if (obj?.onNegativeTestFile) {
       const negativeTestDir = path.join(TestNegativeDir, schemaId)
       if (await exists(negativeTestDir)) {
         for (const testfile of await fs.readdir(negativeTestDir)) {
@@ -246,21 +237,6 @@ async function forEachFile(/** @type {ForEachTestFile} */ obj) {
     await obj?.afterSchemaFile?.(schema)
   }
 
-  async function toSchemaFile(
-    /** @type {string} */ schemaPath,
-    /** @type {string} */ schemaName,
-  ) {
-    const buffer = await fs.readFile(schemaPath)
-    const text = buffer.toString()
-    return {
-      buffer,
-      text,
-      json: await readDataFile({ filepath: schemaPath, text }),
-      name: schemaName,
-      path: schemaPath,
-    }
-  }
-
   async function toTestFile(/** @type {string} */ testfilePath) {
     const buffer = await fs.readFile(testfilePath)
     const text = buffer.toString()
@@ -270,6 +246,18 @@ async function forEachFile(/** @type {ForEachTestFile} */ obj) {
       json: await readDataFile({ filepath: testfilePath, text }),
       path: testfilePath,
     }
+  }
+}
+
+async function toSchemaFile(/** @type {string} */ schemaPath) {
+  const buffer = await fs.readFile(schemaPath)
+  const text = buffer.toString()
+  return {
+    buffer,
+    text,
+    json: await readDataFile({ filepath: schemaPath, text }),
+    name: path.basename(schemaPath),
+    path: schemaPath,
   }
 }
 
@@ -295,13 +283,9 @@ async function readDataFile(
       break
     case '.toml':
       try {
-        /**
-         * Set `bigint` to `false` so JSON numbers parse as JavaScript
-         * numbers (instead of JavaScript BigInts).
-         */
         return TOML.parse(obj.text)
       } catch (err) {
-        printErrorAndExit(err, [`Failed to decode TOML file "${obj.filepath}"`])
+        printErrorAndExit(err, [`Failed to parse TOML file "${obj.filepath}"`])
       }
       break
     default:
@@ -331,7 +315,7 @@ function printErrorAndExit(error, messages, extraText) {
   }
 
   console.warn('---')
-  process.stderr.write(error instanceof Error ? error?.stack ?? '' : '')
+  process.stderr.write(error instanceof Error ? (error?.stack ?? '') : '')
   process.stderr.write('\n')
   process.exit(1)
 }
@@ -346,7 +330,7 @@ function getSchemaDialect(/** @type {string} */ schemaUrl) {
 }
 
 /**
- * @typedef {Object} ajvFactoryOptions
+ * @typedef {Object} AjvFactoryOptions
  * @property {string} draftVersion
  * @property {boolean} fullStrictMode
  * @property {string[]} [unknownFormats]
@@ -359,7 +343,7 @@ function getSchemaDialect(/** @type {string} */ schemaUrl) {
  * Returns the correct and configured Ajv instance for a particular $schema version
  */
 async function ajvFactory(
-  /** @type {ajvFactoryOptions} */ {
+  /** @type {AjvFactoryOptions} */ {
     draftVersion,
     fullStrictMode = true,
     unknownFormats = [],
@@ -580,6 +564,7 @@ async function taskLint() {
 }
 
 async function taskCheck() {
+  console.info(`===== VALIDATE PRECONDITIONS =====`)
   await assertFileSystemIsValid()
 
   // Check catalog.json.
@@ -606,6 +591,7 @@ async function taskCheck() {
   assertSchemaValidationJsonHasValidSkipTest()
 
   // Run pre-checks (checks before JSON Schema validation) on all files
+  console.info(`===== VALIDATE SCHEMAS =====`)
   const spinner = ora().start()
   await forEachFile({
     async onSchemaFile(schema) {
@@ -707,14 +693,63 @@ async function taskCheck() {
   console.info(`✔️ Schemas: All Ajv validation tests succeeded`)
 
   // Print information.
+  console.info(`===== REPORT =====`)
   await printSimpleStatistics()
   await printCountSchemaVersions()
 }
 
 async function taskCheckStrict() {
-  argv.ExplicitTestFile = argv.SchemaName || '<all>'
-  argv.SchemaName = 'metaschema-draft-07-unofficial-strict.json'
-  await taskCheck()
+  const spinner = ora().start()
+  spinner.start('Testing schema with unofficial draft-07 strict metaschema')
+
+  const ajv = await ajvFactory({
+    draftVersion: 'draft-07',
+    fullStrictMode: false,
+  })
+  const metaSchemaFile = await toSchemaFile(
+    './src/schemas/json/metaschema-draft-07-unofficial-strict.json',
+  )
+  let validateFn
+  try {
+    validateFn = ajv.compile(metaSchemaFile.json)
+  } catch (err) {
+    spinner.fail()
+    printErrorAndExit(err, [
+      `Failed to compile schema file ${metaSchemaFile.path}`,
+    ])
+  }
+
+  await forEachFile({
+    async onSchemaFile(schemaFile) {
+      spinner.text = `Running Ajv with unofficial draft-07 strict metaschema on file: ${schemaFile.path}`
+
+      const validate = validateFn
+      if (!validate(schemaFile.json)) {
+        spinner.fail()
+        printErrorAndExit(
+          validate.err,
+          [
+            `Schema validation failed ./${schemaFile.path}`,
+            `Showing first error out of ${validate.errors?.length ?? '?'} total error(s)`,
+          ],
+          util.formatWithOptions(
+            { colors: true },
+            '%O',
+            validate.errors?.[0] ?? '???',
+          ),
+        )
+      }
+    },
+  })
+  spinner.stop()
+  console.info(
+    `✔️ Schemas: All unofficial draft-07 strict metaschema validation tests succeeded`,
+  )
+
+  // Print information.
+  console.info(`===== REPORT =====`)
+  await printSimpleStatistics()
+  await printCountSchemaVersions()
 }
 
 async function taskCheckRemote() {
@@ -1469,7 +1504,7 @@ async function printSimpleStatistics() {
 
 {
   const helpMenu = `USAGE:
-  node ./cli.js [--help] [--SchemaName=<schema>] <taskName|functionName>
+  node ./cli.js [--help] [--schema-name=<schema>] <taskName|functionName>
 
 TASKS:
   new-schema: Create a new JSON schema
@@ -1481,18 +1516,20 @@ TASKS:
 
 EXAMPLES:
   node ./cli.js check
-  node ./cli.js check --SchemaName=schema-catalog.json
-  node ./cli.js check-strict --SchemaName=schema-catalog.json
-  `
+  node ./cli.js check --schema-name=schema-catalog.json
+  node ./cli.js check-strict --schema-name=schema-catalog.json
+`
 
   if (!argv._[0]) {
-    console.error(helpMenu)
-    console.error(`${chalk.red('Error:')} No argument given`)
+    process.stderr.write(helpMenu + '\n')
+    process.stderr.write(`${chalk.red('Error:')} No argument given` + '\n')
     process.exit(1)
   }
   if (argv._[1]) {
-    console.error(helpMenu)
-    console.error(`${chalk.red('Error:')} Too many arguments given`)
+    process.stderr.write(helpMenu + '\n')
+    process.stderr.write(
+      `${chalk.red('Error:')} Too many arguments given` + '\n',
+    )
     process.exit(1)
   }
   if (argv.help) {

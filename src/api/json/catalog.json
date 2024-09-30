@@ -2951,10 +2951,46 @@
       "url": "https://raw.githubusercontent.com/siemens/kas/master/kas/schema-kas.json"
     },
     {
-      "name": "k9s plugin.yml",
-      "description": "k9s CLI plugin.yml file. Documentation: https://k9scli.io/topics/plugins",
-      "fileMatch": ["**/k9s/plugin.yml"],
-      "url": "https://raw.githubusercontent.com/derailed/k9s/master/plugins/schema.json"
+      "name": "k9s aliases.yaml",
+      "description": "k9s CLI aliases.yaml file. Documentation: https://k9scli.io/topics/aliases",
+      "fileMatch": ["**/k9s/aliases.yaml"],
+      "url": "https://raw.githubusercontent.com/derailed/k9s/master/internal/config/json/schemas/aliases.json"
+    },
+    {
+      "name": "k9s config.yaml",
+      "description": "k9s CLI config.yaml file. Documentation: https://k9scli.io/topics/config",
+      "fileMatch": ["**/k9s/config.yaml"],
+      "url": "https://raw.githubusercontent.com/derailed/k9s/master/internal/config/json/schemas/k9s.json"
+    },
+    {
+      "name": "k9s cluster-config.yaml",
+      "description": "k9s CLI cluster-config.yaml file. Documentation: https://k9scli.io/topics/config",
+      "fileMatch": ["**/k9s/clusters/*/*/config.yaml"],
+      "url": "https://raw.githubusercontent.com/derailed/k9s/master/internal/config/json/schemas/context.json"
+    },
+    {
+      "name": "k9s hotkeys.yaml",
+      "description": "k9s CLI hotkeys.yaml file. Documentation: https://k9scli.io/topics/hotkeys",
+      "fileMatch": ["**/k9s/hotkeys.yaml"],
+      "url": "https://raw.githubusercontent.com/derailed/k9s/master/internal/config/json/schemas/hotkeys.json"
+    },
+    {
+      "name": "k9s plugins.yaml",
+      "description": "k9s CLI plugins.yaml file. Documentation: https://k9scli.io/topics/plugins",
+      "fileMatch": ["**/k9s/plugins.yaml"],
+      "url": "https://raw.githubusercontent.com/derailed/k9s/master/internal/config/json/schemas/plugins.json"
+    },
+    {
+      "name": "k9s skin.yaml",
+      "description": "k9s CLI skin.yaml file. Documentation: https://k9scli.io/topics/skins",
+      "fileMatch": ["**/k9s/skins/*.yaml"],
+      "url": "https://raw.githubusercontent.com/derailed/k9s/master/internal/config/json/schemas/skin.json"
+    },
+    {
+      "name": "k9s views.yaml",
+      "description": "k9s CLI views.yaml file. Documentation: https://k9scli.io/topics/columns",
+      "fileMatch": ["**/k9s/views.yaml"],
+      "url": "https://raw.githubusercontent.com/derailed/k9s/master/internal/config/json/schemas/views.json"
     },
     {
       "name": "KIMMDY config file",
@@ -3687,6 +3723,135 @@
       "url": "https://raw.githubusercontent.com/ory/kratos/master/.schema/version.schema.json"
     },
     {
+      "name": "OSCAL Assessment Plan (AP)",
+      "description": "NIST Open Security Controls Assessment Language (OSCAL) Assessment Plan. (https://pages.nist.gov/OSCAL-Reference)",
+      "fileMatch": ["oscal*assessment-plan.json", "oscal*assessment_plan.json"],
+      "url": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_assessment-plan_schema.json",
+      "versions": {
+        "1.1.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_assessment-plan_schema.json",
+        "1.1.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.1/oscal_assessment-plan_schema.json",
+        "1.1.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.0/oscal_assessment-plan_schema.json",
+        "1.0.6": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.6/oscal_assessment-plan_schema.json",
+        "1.0.5": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.5/oscal_assessment-plan_schema.json",
+        "1.0.4": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.4/oscal_assessment-plan_schema.json",
+        "1.0.3": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.3/oscal_assessment-plan_schema.json",
+        "1.0.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.2/oscal_assessment-plan_schema.json",
+        "1.0.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.1/oscal_assessment-plan_schema.json",
+        "1.0.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.0/oscal_assessment-plan_schema.json"
+      }
+    },
+    {
+      "name": "OSCAL Assessment Results (AR)",
+      "description": "NIST Open Security Controls Assessment Language (OSCAL) Assessment Results. (https://pages.nist.gov/OSCAL-Reference)",
+      "fileMatch": [
+        "oscal*assessment-results.json",
+        "oscal*assessment_results.json"
+      ],
+      "url": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_assessment-results_schema.json",
+      "versions": {
+        "1.1.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_assessment-results_schema.json",
+        "1.1.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.1/oscal_assessment-results_schema.json",
+        "1.1.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.0/oscal_assessment-results_schema.json",
+        "1.0.6": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.6/oscal_assessment-results_schema.json",
+        "1.0.5": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.5/oscal_assessment-results_schema.json",
+        "1.0.4": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.4/oscal_assessment-results_schema.json",
+        "1.0.3": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.3/oscal_assessment-results_schema.json",
+        "1.0.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.2/oscal_assessment-results_schema.json",
+        "1.0.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.1/oscal_assessment-results_schema.json",
+        "1.0.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.0/oscal_assessment-results_schema.json"
+      }
+    },
+    {
+      "name": "OSCAL Catalog",
+      "description": "NIST Open Security Controls Assessment Language (OSCAL) Catalog. (https://pages.nist.gov/OSCAL-Reference)",
+      "fileMatch": ["oscal*catalog.json"],
+      "url": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_catalog_schema.json",
+      "versions": {
+        "1.1.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_catalog_schema.json",
+        "1.1.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.1/oscal_catalog_schema.json",
+        "1.1.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.0/oscal_catalog_schema.json",
+        "1.0.6": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.6/oscal_catalog_schema.json",
+        "1.0.5": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.5/oscal_catalog_schema.json",
+        "1.0.4": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.4/oscal_catalog_schema.json",
+        "1.0.3": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.3/oscal_catalog_schema.json",
+        "1.0.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.2/oscal_catalog_schema.json",
+        "1.0.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.1/oscal_catalog_schema.json",
+        "1.0.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.0/oscal_catalog_schema.json"
+      }
+    },
+    {
+      "name": "OSCAL Component Definition (CDef)",
+      "description": "NIST Open Security Controls Assessment Language (OSCAL) Component Definition. (https://pages.nist.gov/OSCAL-Reference)",
+      "fileMatch": ["oscal*component.json", "oscal*cdef.json"],
+      "url": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_component_schema.json",
+      "versions": {
+        "1.1.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_component_schema.json",
+        "1.1.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.1/oscal_component_schema.json",
+        "1.1.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.0/oscal_component_schema.json",
+        "1.0.6": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.6/oscal_component_schema.json",
+        "1.0.5": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.5/oscal_component_schema.json",
+        "1.0.4": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.4/oscal_component_schema.json",
+        "1.0.3": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.3/oscal_component_schema.json",
+        "1.0.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.2/oscal_component_schema.json",
+        "1.0.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.1/oscal_component_schema.json",
+        "1.0.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.0/oscal_component_schema.json"
+      }
+    },
+    {
+      "name": "OSCAL Plan of Action and Milestones (POA&M)",
+      "description": "NIST Open Security Controls Assessment Language (OSCAL) Plan of Action and Milestones. (https://pages.nist.gov/OSCAL-Reference)",
+      "fileMatch": ["oscal*poam.json"],
+      "url": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_poam_schema.json",
+      "versions": {
+        "1.1.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_poam_schema.json",
+        "1.1.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.1/oscal_poam_schema.json",
+        "1.1.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.0/oscal_poam_schema.json",
+        "1.0.6": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.6/oscal_poam_schema.json",
+        "1.0.5": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.5/oscal_poam_schema.json",
+        "1.0.4": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.4/oscal_poam_schema.json",
+        "1.0.3": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.3/oscal_poam_schema.json",
+        "1.0.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.2/oscal_poam_schema.json",
+        "1.0.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.1/oscal_poam_schema.json",
+        "1.0.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.0/oscal_poam_schema.json"
+      }
+    },
+    {
+      "name": "OSCAL Profile",
+      "description": "NIST Open Security Controls Assessment Language (OSCAL) Profile. (https://pages.nist.gov/OSCAL-Reference)",
+      "fileMatch": ["oscal*profile.json"],
+      "url": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_profile_schema.json",
+      "versions": {
+        "1.1.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_profile_schema.json",
+        "1.1.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.1/oscal_profile_schema.json",
+        "1.1.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.0/oscal_profile_schema.json",
+        "1.0.6": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.6/oscal_profile_schema.json",
+        "1.0.5": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.5/oscal_profile_schema.json",
+        "1.0.4": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.4/oscal_profile_schema.json",
+        "1.0.3": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.3/oscal_profile_schema.json",
+        "1.0.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.2/oscal_profile_schema.json",
+        "1.0.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.1/oscal_profile_schema.json",
+        "1.0.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.0/oscal_profile_schema.json"
+      }
+    },
+    {
+      "name": "OSCAL System Security Plan (SSP)",
+      "description": "NIST Open Security Controls Assessment Language (OSCAL) System Security Plan. (https://pages.nist.gov/OSCAL-Reference)",
+      "fileMatch": ["oscal*ssp.json"],
+      "url": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_ssp_schema.json",
+      "versions": {
+        "1.1.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_ssp_schema.json",
+        "1.1.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.1/oscal_ssp_schema.json",
+        "1.1.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.0/oscal_ssp_schema.json",
+        "1.0.6": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.6/oscal_ssp_schema.json",
+        "1.0.5": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.5/oscal_ssp_schema.json",
+        "1.0.4": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.4/oscal_ssp_schema.json",
+        "1.0.3": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.3/oscal_ssp_schema.json",
+        "1.0.2": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.2/oscal_ssp_schema.json",
+        "1.0.1": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.1/oscal_ssp_schema.json",
+        "1.0.0": "https://github.com/usnistgov/OSCAL/releases/download/v1.0.0/oscal_ssp_schema.json"
+      }
+    },
+    {
       "name": "OSS Review Toolkit configuration",
       "description": "ORT's main configuration file",
       "fileMatch": ["**/.ort/config/config.yml", "**/.ort/config/config.yaml"],
@@ -3818,6 +3983,12 @@
       "versions": {
         "0.0": "https://json.schemastore.org/plagiarize-me-0.0.json"
       }
+    },
+    {
+      "name": "podbard.yaml",
+      "description": "Configuration file for Podbard - a podcast site generator",
+      "fileMatch": ["podbard.yaml"],
+      "url": "https://raw.githubusercontent.com/Songmu/podbard/main/schema.yaml"
     },
     {
       "name": "portman.json",
@@ -4493,10 +4664,10 @@
       "url": "https://raw.githubusercontent.com/hardisgroupcom/sfdx-hardis/main/config/sfdx-hardis.jsonschema.json"
     },
     {
-      "name": "Sigma",
-      "description": "The Sigma detection format. Documentation: https://github.com/SigmaHQ/sigma-specification and https://github.com/SigmaHQ/sigma",
+      "name": "Sigma Detection Rule",
+      "description": "The Sigma detection rule format. Documentation: https://github.com/SigmaHQ/sigma-specification/blob/main/specification/sigma-rules-specification.md and https://github.com/SigmaHQ/sigma",
       "fileMatch": ["**/sigma/**/*.yml"],
-      "url": "https://raw.githubusercontent.com/SigmaHQ/sigma-specification/main/sigma-schema.json"
+      "url": "https://raw.githubusercontent.com/SigmaHQ/sigma-specification/main/json-schema/sigma-detection-rule-schema.json"
     },
     {
       "name": "Sigrid scope configuration file",
@@ -4736,6 +4907,12 @@
       "description": "Taurus bzt cli framework config",
       "fileMatch": ["bzt.yml", "bzt.yaml", "taurus.yml", "taurus.yaml"],
       "url": "https://json.schemastore.org/taurus.json"
+    },
+    {
+      "name": "Tauticord",
+      "description": "Tauticord configuration (v2)",
+      "fileMatch": ["tauticord.yml", "tauticord.yaml"],
+      "url": "https://raw.githubusercontent.com/nwithan8/tauticord/master/.schema/config_v2.schema.json"
     },
     {
       "name": "template.json",
@@ -5310,7 +5487,14 @@
     {
       "name": "mise",
       "description": "mise config, a polyglot dev tool manager",
-      "fileMatch": [".mise.toml", ".mise.*.toml", "**/mise/config.toml"],
+      "fileMatch": [
+        ".mise.toml",
+        ".mise.*.toml",
+        "mise.toml",
+        "mise.*.toml",
+        "**/.mise/config.toml",
+        "**/mise/config.toml"
+      ],
       "url": "https://mise.jdx.dev/schema/mise.json"
     },
     {
@@ -6872,6 +7056,30 @@
       "description": "YaWL specification file",
       "fileMatch": ["*.yawl.yaml", "*.yawl.yml"],
       "url": "https://raw.githubusercontent.com/yandex-cloud/json-schema-store/master/serverless/workflows/yawl.json"
+    },
+    {
+      "name": "Application list for a WinUtil",
+      "description": "Application list for a WinUtil",
+      "fileMatch": ["**/*winutil*/config/applications.json"],
+      "url": "https://json.schemastore.org/winutil-applications.json"
+    },
+    {
+      "name": "Preset list for a WinUtil",
+      "description": "Preset list for a WinUtil",
+      "fileMatch": ["**/*winutil*/config/preset.json"],
+      "url": "https://json.schemastore.org/winutil-preset.json"
+    },
+    {
+      "name": "Tab list for a LinUtil",
+      "description": "Tab list for a LinUtil",
+      "fileMatch": ["**/*linutil*/**/tabs.toml"],
+      "url": "https://json.schemastore.org/linutil-tabs.json"
+    },
+    {
+      "name": "Tab data for a LinUtil",
+      "description": "Tab data for a LinUtil",
+      "fileMatch": ["**/*linutil*/**/tab_data.toml"],
+      "url": "https://json.schemastore.org/linutil-tab-data.json"
     }
   ]
 }
