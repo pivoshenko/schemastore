@@ -26,6 +26,7 @@
   - [`Microsoft/vscode-json-languageservice`](#microsoftvscode-json-languageservice)
   - [Other](#other)
 - [Troubleshooting](#troubleshooting)
+  - [Dependency Errors](#dependency-errors)
   - [`pre-commit` fails to format files in CI](#pre-commit-fails-to-format-files-in-ci)
 - [How-to](#how-to)
   - [How to add a JSON Schema that's hosted in this repository](#how-to-add-a-json-schema-thats-hosted-in-this-repository)
@@ -131,7 +132,7 @@ So, do not add regex patterns for any of the following:
 - string-embedded DSLs
 - SSH URLs, HTTPS URLs, and other complex URIs
 
-In addition, be weary when adding exhaustive support to enum-type fields. Often, when applications expand support (thus expanding the set of allowable enums), the schema will become invalid.
+In addition, be wary when adding exhaustive support to enum-type fields. Often, when applications expand support (thus expanding the set of allowable enums), the schema will become invalid.
 
 #### Undocumented Features
 
@@ -198,7 +199,7 @@ Care must be taken to reduce breaking changes; some include:
 
 **1. Preserving schema names**
 
-When renaming a schema name, the old version must continue to exist. Otherwise, all references to it will break. The content of he old schema must look something like:
+When renaming a schema name, the old version must continue to exist. Otherwise, all references to it will break. The content of the old schema must look something like:
 
 ```json
 {
@@ -216,7 +217,9 @@ Many tools, such as [validate-pyproject](https://github.com/abravalheri/validate
 validate-pyproject --tool cibuildwheel=https://json.schemastore.org/cibuildwheel.toml#/properties/tool/properties
 ```
 
-This means that renames in subschema paths is a potentially breaking change. If a rename is necessary, it is recommended to keep the old path and `$ref` to the new location, if necessary.
+This means that renames in subschema paths is a potentially a breaking change. However, it needs to be possible to refactor internal schema structures.
+
+It is okay when refactoring the subschema to a location under `$defs` or `definitions`. Otherwise, use your best judgement. If a rename is necessary, it is recommended to keep the old path and `$ref` to the new location, if possible.
 
 ### Language Server Features
 
@@ -346,6 +349,28 @@ And, generally, if a software supports multiple formats, stick with configuratio
 
 Some common errors include:
 
+### Dependency Errors
+
+When updating the working tree, you may suddenly come across issues with dependencies like the following:
+
+```console
+$ node ./cli.js
+node:internal/modules/esm/resolve:838
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'ajv' imported from .../schemastore/cli.js
+    at packageResolve (node:internal/modules/esm/resolve:838:9)
+    ...
+    at ModuleJob._link (node:internal/modules/esm/module_job:132:49) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v23.0.0
+```
+
+To fix dependencies it is recommended to run `npm clean-install`. The command `npm install` should work as well.
+
 ### `pre-commit` fails to format files in CI
 
 The `pre-commit.ci` action can "mysteriously" fail to automatically commit formatted files. This happens because the repository corresponding to the pull request branch is not owned by a user account. This constraint is detailed in [GitHub's documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork).
@@ -470,7 +495,7 @@ Finally, validate your changes. See [How to Validate a JSON Schema](#how-to-vali
 
 ### How to add a JSON Schema with multiple versions
 
-Refer to this [`agripparc` PR](https://github.com/SchemaStore/schemastore/pull/1950/files) as an example. First, your schema names should be suffix with the version number.
+Refer to this [`agripparc` PR](https://github.com/SchemaStore/schemastore/pull/1950/files) as an example. First, your schema names should be suffixed with the version number.
 
 - `src/schemas/json/agripparc-1.2.json`
 - `src/schemas/json/agripparc-1.3.json`
