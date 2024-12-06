@@ -93,12 +93,13 @@
       "name": ".aiproj.json",
       "description": "Settings for project analysis by the Application Inspector",
       "fileMatch": [".aiproj.json"],
-      "url": "https://json.schemastore.org/aiproj-1.3.json",
+      "url": "https://json.schemastore.org/aiproj-1.4.json",
       "versions": {
         "1.0": "https://json.schemastore.org/aiproj-1.0.json",
         "1.1": "https://json.schemastore.org/aiproj-1.1.json",
         "1.2": "https://json.schemastore.org/aiproj-1.2.json",
-        "1.3": "https://json.schemastore.org/aiproj-1.3.json"
+        "1.3": "https://json.schemastore.org/aiproj-1.3.json",
+        "1.4": "https://json.schemastore.org/aiproj-1.4.json"
       }
     },
     {
@@ -863,12 +864,13 @@
       "name": "BX CI",
       "description": "CI configuration for Amdocs Bill Experience projects",
       "fileMatch": ["**/bxci.yaml", "**/bxci.yml"],
-      "url": "https://json.schemastore.org/bxci.schema-2.x.json",
+      "url": "https://json.schemastore.org/bxci.schema-3.x.json",
       "versions": {
         "1.0": "https://json.schemastore.org/bxci.schema-1.0.json",
         "1.0.1": "https://json.schemastore.org/bxci.schema-1.0.1.json",
         "2.0.0": "https://json.schemastore.org/bxci.schema-2.0.0.json",
-        "2.x": "https://json.schemastore.org/bxci.schema-2.x.json"
+        "2.x": "https://json.schemastore.org/bxci.schema-2.x.json",
+        "3.x": "https://json.schemastore.org/bxci.schema-2.x.json"
       }
     },
     {
@@ -3225,6 +3227,12 @@
       "url": "https://json.schemastore.org/lsdlschema.json"
     },
     {
+      "name": ".luaurc",
+      "description": "Luau language configuration file",
+      "fileMatch": [".luaurc"],
+      "url": "https://json.schemastore.org/luaurc.json"
+    },
+    {
       "name": "MapEHR Mapping",
       "description": "Mapping for MapEHR.com",
       "fileMatch": [".map.yml", ".map.yaml", ".map.json"],
@@ -3605,6 +3613,12 @@
       "versions": {
         "3.3.0": "https://json.schemastore.org/nuget-project-3.3.0.json"
       }
+    },
+    {
+      "name": "NueJS configuration file",
+      "description": "NueJS site configuration file",
+      "fileMatch": [],
+      "url": "https://json.schemastore.org/nuejs-site.json"
     },
     {
       "name": "nswag.json",
@@ -5073,7 +5087,7 @@
       "name": "transcend.yml",
       "description": "Define personal data in code using Transcend",
       "fileMatch": ["transcend.yml", "transcend.yaml"],
-      "url": "https://raw.githubusercontent.com/transcend-io/cli/main/transcend-yml-schema-v4.json"
+      "url": "https://raw.githubusercontent.com/transcend-io/cli/main/transcend-yml-schema-latest.json"
     },
     {
       "name": "trime.yaml",
@@ -7184,6 +7198,12 @@
       "description": "WireMock stub mapping JSON. See https://wiremock.org/docs/stubbing/",
       "fileMatch": ["wiremock-stub-mapping.yml", "wiremock-stub-mapping.yaml"],
       "url": "https://json.schemastore.org/wiremock-stub-mapping.json"
+    },
+    {
+      "name": "Bitmovin Encoding Template",
+      "description": "An encoding workflow from a single configuration template",
+      "fileMatch": ["*.bitmovin.json", "*.bitmovin.yml", "*.bitmovin.yaml"],
+      "url": "https://raw.githubusercontent.com/bitmovin/bitmovin-api-sdk-examples/main/bitmovin-encoding-template.json"
     }
   ]
 }
