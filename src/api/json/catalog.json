@@ -2299,7 +2299,7 @@
         "*.ksail.yaml",
         "*.ksail.yml"
       ],
-      "url": "https://github.com/devantler/ksail/blob/main/schemas/ksail-cluster-schema.json"
+      "url": "https://raw.githubusercontent.com/devantler/ksail/refs/heads/main/schemas/ksail-cluster-schema.json"
     },
     {
       "name": "function.json",
@@ -4313,6 +4313,12 @@
       "url": "https://json.schemastore.org/project-1.0.0-rc2.json"
     },
     {
+      "name": "project.owasp.yaml",
+      "description": "OWASP project",
+      "fileMatch": ["project.owasp.yaml"],
+      "url": "https://raw.githubusercontent.com/OWASP/Nest/main/schema/project.json"
+    },
+    {
       "name": "prometheus.json",
       "description": "Prometheus configuration file",
       "fileMatch": ["prometheus.yml", "prometheus.yaml"],
@@ -4449,6 +4455,12 @@
         "_localqgoda.json"
       ],
       "url": "https://www.qgoda.net/schemas/qgoda.json"
+    },
+    {
+      "name": "Railway",
+      "description": "Use Railway config as code to define settings for building and deploying your services",
+      "fileMatch": ["railway.toml", "railway.json"],
+      "url": "https://railway.com/railway.schema.json"
     },
     {
       "name": "Rattler-build",
@@ -4985,6 +4997,12 @@
       "url": "https://raw.githubusercontent.com/speakeasy-api/sdk-gen-config/main/schemas/workflow.schema.json"
     },
     {
+      "name": "Speakeasy Generation Config File",
+      "description": "Speakeasy generation configuration file. Read more at https://www.speakeasy.com/docs/speakeasy-reference/generation/gen-yaml",
+      "fileMatch": ["**/.speakeasy/gen.yaml"],
+      "url": "https://raw.githubusercontent.com/speakeasy-api/sdk-gen-config/main/schemas/gen.config.schema.json"
+    },
+    {
       "name": "SpecIF",
       "description": "The Specification Integration Facility (SpecIF) integrates partial system models from different methods and tools in a semantic net. Documentation: https://specif.de and https://github.com/GfSE",
       "fileMatch": ["*.specif", "*.specif.json"],
@@ -5443,7 +5461,7 @@
       "name": "Vela Pipeline Configuration",
       "description": "Vela Pipeline Configuration File",
       "fileMatch": [".vela.yml", ".vela.yaml"],
-      "url": "https://github.com/go-vela/types/releases/latest/download/schema.json"
+      "url": "https://github.com/go-vela/server/releases/latest/download/schema.json"
     },
     {
       "name": "venvironment.yaml",
@@ -7213,18 +7231,22 @@
       "name": "CRS WAF test file",
       "description": "Definition of a test for verifying WAF behavior",
       "fileMatch": ["*.waft", ".waft.yaml", ".waft.yml"],
-      "url": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/main/spec/v2.1.0/waf-tests-schema-v2.1.0.json",
+      "url": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/main/spec/v2.2.0/waf-tests-schema-v2.2.0.json",
       "versions": {
-        "2.1.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/main/spec/v2.1.0/waf-tests-schema-v2.1.0.json"
+        "2.0.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/main/spec/v2.0.0/waf-tests-schema-v2.0.0.json",
+        "2.1.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/main/spec/v2.1.0/waf-tests-schema-v2.1.0.json",
+        "2.2.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/main/spec/v2.2.0/waf-tests-schema-v2.2.0.json"
       }
     },
     {
       "name": "CRS WAF test platform overrides file",
       "description": "Definition of platform specific overrides for WAF tests",
       "fileMatch": ["*.wafto", ".wafto.yaml", ".wafto.yml"],
-      "url": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.1.0/waf-platform-overrides-schema-v2.1.0.json",
+      "url": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.2.0/waf-platform-overrides-schema-v2.2.0.json",
       "versions": {
-        "2.1.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.1.0/waf-platform-overrides-schema-v2.1.0.json"
+        "2.0.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.0.0/waf-platform-overrides-schema-v2.0.0.json",
+        "2.1.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.1.0/waf-platform-overrides-schema-v2.1.0.json",
+        "2.2.0": "https://raw.githubusercontent.com/coreruleset/ftw-tests-schema/master/spec/v2.2.0/waf-platform-overrides-schema-v2.2.0.json"
       }
     },
     {
@@ -7455,6 +7477,30 @@
       "description": "A configuration file for the test environment of the gematik Tiger test platform",
       "fileMatch": ["**/tiger.yml", "**/tiger.yaml"],
       "url": "https://json.schemastore.org/gematik-tiger.json"
+    },
+    {
+      "name": "Tugboat QA config.yml",
+      "description": "Configuration file for Tugboat QA",
+      "fileMatch": ["**/.tugboat/config.yml"],
+      "url": "https://raw.githubusercontent.com/TugboatQA/docs/refs/heads/main/static/config-schema.json"
+    },
+    {
+      "name": "C4InterFlow",
+      "description": "C4InterFlow Architecture as Code file",
+      "fileMatch": ["**/*.c4interflow.yaml", "**/*.c4interflow.json"],
+      "url": "https://raw.githubusercontent.com/SlavaVedernikov/C4InterFlow/refs/heads/master/C4InterFlow/schema.json"
+    },
+    {
+      "name": "Wake",
+      "description": "Wake - development, testing, and static analysis framework for Solidity",
+      "fileMatch": ["**/*wake.toml", "**/*.wake.toml"],
+      "url": "https://raw.githubusercontent.com/Ackee-Blockchain/wake/refs/heads/main/docs/wake-schema.json"
+    },
+    {
+      "name": "Trident",
+      "description": "Trident - Rust-based fuzzing framework for Solana programs to help ship secure code",
+      "fileMatch": ["**/*Trident.toml", "**/*.Trident.toml"],
+      "url": "https://raw.githubusercontent.com/Ackee-Blockchain/trident/refs/heads/master/trident-spec.json"
     }
   ]
 }
