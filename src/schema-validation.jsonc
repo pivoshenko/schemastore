@@ -647,6 +647,9 @@
     "dart-build.json": {
       "unknownKeywords": ["deprecationMessage", "sources"]
     },
+    "databricks-asset-bundles.json": {
+      "unknownKeywords": ["markdownDescription"]
+    },
     "dein.json": {
       "unknownKeywords": ["x-taplo", "x-taplo-info"]
     },
@@ -902,6 +905,9 @@
       ],
       "unknownFormat": ["language", "identifier-properties", "identifier"]
     },
+    "maturin.json": {
+      "unknownFormat": ["uint16"]
+    },
     "minecraft-advancement.json": {
       "externalSchema": ["base.json"]
     },
@@ -1002,6 +1008,7 @@
     "pyproject.json": {
       "externalSchema": [
         "hatch.json",
+        "maturin.json",
         "partial-black.json",
         "partial-cibuildwheel.json",
         "partial-mypy.json",
@@ -1017,6 +1024,7 @@
         "partial-tox.json",
         "poetry.json",
         "ruff.json",
+        "tombi.json",
         "uv.json",
         "base.json"
       ],
@@ -1148,6 +1156,9 @@
     "toolinfo.1.1.0.json": {
       "externalSchema": ["licenses.1.json"],
       "unknownKeywords": ["authors", "version"]
+    },
+    "tombi.json": {
+      "unknownKeywords": ["x-tombi-toml-version"]
     },
     "tsconfig.json": {
       "unknownKeywords": [

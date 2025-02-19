@@ -548,7 +548,6 @@
     "dependencies": {
       "type": "object",
       "description": "This is a hash of package name (keys) and version constraints (values) that are required to run this package.",
-      "required": ["python"],
       "properties": {
         "python": {
           "$ref": "#/definitions/poetry-dependency",
@@ -556,10 +555,8 @@
           "description": "The Python versions the package is compatible with."
         }
       },
-      "patternProperties": {
-        "^(?!python$)[a-zA-Z-_.0-9]+$": {
-          "$ref": "#/definitions/poetry-dependency-any"
-        }
+      "additionalProperties": {
+        "$ref": "#/definitions/poetry-dependency-any"
       }
     },
     "dev-dependencies": {

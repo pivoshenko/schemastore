@@ -149,13 +149,17 @@
         },
         "types": {
           "$ref": "#/definitions/packageExportsEntryOrFallback",
-          "description": "The module path that is resolved for TypeScript types when this specifier is imported. Should be listed before other conditions."
+          "description": "The module path that is resolved for TypeScript types when this specifier is imported. Should be listed before other conditions. Additionally, versioned \"types\" condition in the form \"types@{selector}\" are supported."
         }
       },
       "patternProperties": {
         "^[^.0-9]+$": {
           "$ref": "#/definitions/packageExportsEntryOrFallback",
           "description": "The module path that is resolved when this environment matches the property name."
+        },
+        "^types@.+$": {
+          "$ref": "#/definitions/packageExportsEntryOrFallback",
+          "description": "The module path that is resolved for TypeScript types when this specifier is imported. Should be listed before other conditions. Additionally, versioned \"types\" condition in the form \"types@{selector}\" are supported."
         }
       },
       "additionalProperties": false
@@ -216,13 +220,17 @@
         },
         "types": {
           "$ref": "#/definitions/packageImportsEntryOrFallback",
-          "description": "The module path that is resolved for TypeScript types when this specifier is imported. Should be listed before other conditions."
+          "description": "The module path that is resolved for TypeScript types when this specifier is imported. Should be listed before other conditions. Additionally, versioned \"types\" condition in the form \"types@{selector}\" are supported."
         }
       },
       "patternProperties": {
         "^[^.0-9]+$": {
           "$ref": "#/definitions/packageImportsEntryOrFallback",
           "description": "The module path that is resolved when this environment matches the property name."
+        },
+        "^types@.+$": {
+          "$ref": "#/definitions/packageImportsEntryOrFallback",
+          "description": "The module path that is resolved for TypeScript types when this specifier is imported. Should be listed before other conditions. Additionally, versioned \"types\" condition in the form \"types@{selector}\" are supported."
         }
       },
       "additionalProperties": false
@@ -974,7 +982,7 @@
           }
         },
         "onlyBuiltDependencies": {
-          "description": "A list of dependencies to skip the builds.",
+          "description": "A list of package names that are allowed to be executed during installation.",
           "type": "array",
           "items": {
             "type": "string"
@@ -983,6 +991,13 @@
         "onlyBuiltDependenciesFile": {
           "description": "Specifies a JSON file that lists the only packages permitted to run installation scripts during the pnpm install process.",
           "type": "string"
+        },
+        "ignoredBuiltDependencies": {
+          "description": "A list of package names that should not be built during installation.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "allowedDeprecatedVersions": {
           "description": "A list of deprecated versions that the warnings are suppressed.",
@@ -1008,6 +1023,10 @@
             }
           },
           "additionalProperties": false
+        },
+        "configDependencies": {
+          "type": "object",
+          "description": "Configurational dependencies are installed before all the other types of dependencies (before 'dependencies', 'devDependencies', 'optionalDependencies')."
         },
         "auditConfig": {
           "type": "object",

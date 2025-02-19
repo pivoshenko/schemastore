@@ -701,10 +701,11 @@
         "steps": {
           "items": {
             "patternProperties": {
-              ".*": {
+              "^(?!bundle::)(?!with$).*": {
                 "$ref": "#/definitions/StepModel"
               }
             },
+            "additionalProperties": false,
             "type": "object"
           },
           "type": "array"
@@ -767,6 +768,7 @@
                 "$ref": "#/definitions/StepModel"
               }
             },
+            "additionalProperties": false,
             "type": "object"
           },
           "type": "array"
@@ -785,6 +787,15 @@
     },
     "StepBundleModel": {
       "properties": {
+        "title": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
         "envs": {
           "$ref": "#/definitions/EnvModel"
         },
@@ -794,10 +805,14 @@
         "steps": {
           "items": {
             "patternProperties": {
-              ".*": {
+              "^bundle::.+": {
+                "$ref": "#/definitions/StepBundleOverrideModel"
+              },
+              "^(?!bundle::)(?!with$).*": {
                 "$ref": "#/definitions/StepModel"
               }
             },
+            "additionalProperties": false,
             "type": "object"
           },
           "type": "array"
@@ -808,6 +823,15 @@
     },
     "StepBundleOverrideModel": {
       "properties": {
+        "title": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
         "envs": {
           "$ref": "#/definitions/EnvModel"
         },
