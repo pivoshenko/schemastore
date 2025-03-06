@@ -32,6 +32,27 @@
         "type": "string"
       }
     },
+    "devDependency": {
+      "description": "Specifies dependencies that are required for the development and testing of the project. These dependencies are not needed in the production environment.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "optionalDependency": {
+      "description": "Specifies dependencies that are optional for your project. These dependencies are attempted to be installed during the npm install process, but if they fail to install, the installation process will not fail.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "peerDependency": {
+      "description": "Specifies dependencies that are required by the package but are expected to be provided by the consumer of the package.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
     "peerDependencyMeta": {
       "description": "When a user installs your package, warnings are emitted if packages specified in \"peerDependencies\" are not already installed. The \"peerDependenciesMeta\" field serves to provide more information on how your peer dependencies are utilized. Most commonly, it allows peer dependencies to be marked as optional. Metadata for this field is specified with a simple hash of the package name to a metadata object.",
       "type": "object",
@@ -301,7 +322,7 @@
       "pattern": "^(?:(?:@(?:[a-z0-9-*~][a-z0-9-*._~]*)?/[a-z0-9-._~])|[a-z0-9-~])[a-z0-9-._~]*$"
     },
     "version": {
-      "description": "Version must be parseable by node-semver, which is bundled with npm as a dependency.",
+      "description": "Version must be parsable by node-semver, which is bundled with npm as a dependency.",
       "type": "string"
     },
     "description": {
@@ -587,7 +608,7 @@
         },
         "prepare": {
           "type": "string",
-          "description": "Run both BEFORE the package is packed and published, and on local npm install without any arguments. This is run AFTER prepublish, but BEFORE prepublishOnly."
+          "description": "Runs BEFORE the package is packed, i.e. during \"npm publish\" and \"npm pack\", and on local \"npm install\" without any arguments. This is run AFTER \"prepublish\", but BEFORE \"prepublishOnly\"."
         },
         "prepublishOnly": {
           "type": "string",
@@ -694,13 +715,13 @@
       "$ref": "#/definitions/dependency"
     },
     "devDependencies": {
-      "$ref": "#/definitions/dependency"
+      "$ref": "#/definitions/devDependency"
     },
     "optionalDependencies": {
-      "$ref": "#/definitions/dependency"
+      "$ref": "#/definitions/optionalDependency"
     },
     "peerDependencies": {
-      "$ref": "#/definitions/dependency"
+      "$ref": "#/definitions/peerDependency"
     },
     "peerDependenciesMeta": {
       "$ref": "#/definitions/peerDependencyMeta"
@@ -937,10 +958,10 @@
                   "$ref": "#/definitions/dependency"
                 },
                 "optionalDependencies": {
-                  "$ref": "#/definitions/dependency"
+                  "$ref": "#/definitions/optionalDependency"
                 },
                 "peerDependencies": {
-                  "$ref": "#/definitions/dependency"
+                  "$ref": "#/definitions/peerDependency"
                 },
                 "peerDependenciesMeta": {
                   "$ref": "#/definitions/peerDependencyMeta"
@@ -952,6 +973,7 @@
           "additionalProperties": false
         },
         "peerDependencyRules": {
+          "type": "object",
           "properties": {
             "ignoreMissing": {
               "description": "pnpm will not print warnings about missing peer dependencies from this list.",
@@ -975,7 +997,7 @@
           "additionalProperties": false
         },
         "neverBuiltDependencies": {
-          "description": "A list of dependencies to skip the builds.",
+          "description": "A list of dependencies to run builds for.",
           "type": "array",
           "items": {
             "type": "string"

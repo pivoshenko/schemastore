@@ -247,6 +247,7 @@
     "lsdlschema.json",
     "nodemon.json",
     "partial-pyright.json",
+    "pep-723.json",
     "pyproject.json",
     "sarif-2.1.0-rtm.0.json",
     "sarif-2.1.0-rtm.1.json",
@@ -314,6 +315,7 @@
     "partial-eslint-plugins.json", // eslintrc.json[rules.*]
     "partial-fusion-pack-metadata.json", // minecraft-pack-mcmeta.json[fusion]
     "partial-fusion-texture-metadata.json", // minecraft-texture-mcmeta.json[fusion]
+    "partial-taskipy.json", // pyproject.json[tool.taskipy]
     "poetry.json", // backwards-compat
     "setuptools.json", // backwards-compat
     "scikit-build.json", // backwards-compat
@@ -353,7 +355,9 @@
     "json-api-1.0.json",
     "licenses.1.json",
     "toolinfo.1.1.0.json",
-    "npm-link-up.json"
+    "npm-link-up.json",
+    "gematik-test-insurances.json",
+    "lefthook.json"
   ],
   "skiptest": [
     // Add JSON schema to skiptest[] to skip the whole validation process
@@ -493,6 +497,26 @@
         "abcIsExpirationDateOnOrAfterReleaseDate"
       ]
     },
+    "abc-supply-plan-7.0.0.json": {
+      "unknownFormat": ["abc-draft-js_RawDraftContentState"],
+      "unknownKeywords": [
+        "abcIsFirstDayOfMonth",
+        "abcIsLastDayOfMonth",
+        "abcIsAfter0001-01-01",
+        "abcIsBefore9999-12-31",
+        "abcDoMaterialIDsExist",
+        "abcIsAcyclic",
+        "abcAreAllocationMethodsHomogeneous",
+        "abcIsValidColor",
+        "abcNoDuplicateValuesForOrderingProperty",
+        "abcHasNonOverlappingTimeDependentValues",
+        "abcHasUninterruptedTimeDependentValues",
+        "abcIsExpirationDateOnOrAfterManufactureDate",
+        "abcIsReleaseDateOnOrAfterPlanDate",
+        "abcIsReleaseDateOnOrAfterManufactureDate",
+        "abcIsExpirationDateOnOrAfterReleaseDate"
+      ]
+    },
     "anywork-ac-1.0.json": {
       "externalSchema": ["base.json"],
       "unknownKeywords": []
@@ -566,7 +590,12 @@
     "cargo.json": {
       "externalSchema": ["base.json"],
       "unknownFormat": ["uint32", "semver", "semver-requirement"],
-      "unknownKeywords": ["x-taplo", "x-taplo-info", "x-tombi-toml-version"]
+      "unknownKeywords": [
+        "x-taplo",
+        "x-taplo-info",
+        "x-tombi-toml-version",
+        "x-tombi-table-keys-order"
+      ]
     },
     "cheatsheets.json": {
       "externalSchema": ["base.json"]
@@ -953,6 +982,7 @@
       "unknownKeywords": ["x-taplo"]
     },
     "partial-poetry.json": {
+      "unknownKeywords": ["x-tombi-table-keys-order"],
       "externalSchema": ["base.json"]
     },
     "partial-pyright.json": {
@@ -978,13 +1008,62 @@
         "x-taplo"
       ]
     },
+    "partial-taskipy.json": {
+      "unknownKeywords": ["x-tombi-table-keys-order"]
+    },
     "pdm.json": {
       "unknownKeywords": ["x-taplo", "x-taplo-info"]
+    },
+    "pep-723.json": {
+      "externalSchema": [
+        "hatch.json",
+        "maturin.json",
+        "partial-black.json",
+        "partial-cibuildwheel.json",
+        "partial-mypy.json",
+        "partial-pdm.json",
+        "partial-pdm-dockerize.json",
+        "partial-poe.json",
+        "partial-poetry.json",
+        "partial-pyright.json",
+        "partial-repo-review.json",
+        "partial-scikit-build.json",
+        "partial-setuptools.json",
+        "partial-setuptools-scm.json",
+        "partial-taskipy.json",
+        "partial-tox.json",
+        "poetry.json",
+        "ruff.json",
+        "tombi.json",
+        "uv.json",
+        "base.json"
+      ],
+      "unknownFormat": [
+        "uint16",
+        "uint8",
+        "uint",
+        "int",
+        "python-module-name",
+        "pep508-identifier",
+        "python-qualified-identifier",
+        "python-identifier",
+        "pep561-stub-name"
+      ],
+      "unknownKeywords": [
+        "markdownDescription",
+        "x-taplo",
+        "x-taplo-info",
+        "x-tombi-toml-version",
+        "x-tombi-table-keys-order",
+        "x-intellij-html-description",
+        "x-intellij-language-injection"
+      ]
     },
     "pocketmine-plugin.json": {
       "unknownFormat": ["iri"]
     },
     "poetry.json": {
+      "unknownKeywords": ["x-tombi-table-keys-order"],
       "externalSchema": ["partial-poetry.json", "base.json"]
     },
     "pre-commit-config.json": {
@@ -1021,6 +1100,7 @@
         "partial-scikit-build.json",
         "partial-setuptools.json",
         "partial-setuptools-scm.json",
+        "partial-taskipy.json",
         "partial-tox.json",
         "poetry.json",
         "ruff.json",
@@ -1044,6 +1124,8 @@
         "x-taplo",
         "x-taplo-info",
         "x-tombi-toml-version",
+        "x-tombi-table-keys-order",
+        "x-tombi-array-values-order",
         "x-intellij-html-description",
         "x-intellij-language-injection"
       ]

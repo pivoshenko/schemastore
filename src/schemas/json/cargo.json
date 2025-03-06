@@ -184,11 +184,11 @@
           }
         },
         "rev": {
-          "description": "Specify the Git revision to use in case of a [Git dependency](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories).",
+          "description": "Specify the Git revision to use in case of a [Git dependency](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#choice-of-commit).\n\nThis can be a commit hash, or a named reference exposed by the remote repository. GitHub Pull Requests may be specified using the `refs/pull/ID/head` format.",
           "type": "string",
           "x-taplo": {
             "links": {
-              "key": "https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories"
+              "key": "https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#choice-of-commit"
             }
           }
         },
@@ -713,6 +713,7 @@
           "additionalProperties": {
             "$ref": "#/definitions/Dependency"
           },
+          "x-tombi-table-keys-order": "ascending",
           "x-taplo": {
             "links": {
               "key": "https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#build-dependencies"
@@ -728,6 +729,7 @@
           "additionalProperties": {
             "$ref": "#/definitions/Dependency"
           },
+          "x-tombi-table-keys-order": "ascending",
           "x-taplo": {
             "hidden": true
           }
@@ -738,6 +740,7 @@
           "additionalProperties": {
             "$ref": "#/definitions/Dependency"
           },
+          "x-tombi-table-keys-order": "ascending",
           "x-taplo": {
             "links": {
               "key": "https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html"
@@ -750,6 +753,7 @@
           "additionalProperties": {
             "$ref": "#/definitions/Dependency"
           },
+          "x-tombi-table-keys-order": "ascending",
           "x-taplo": {
             "links": {
               "key": "https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#development-dependencies"
@@ -765,6 +769,7 @@
           "additionalProperties": {
             "$ref": "#/definitions/Dependency"
           },
+          "x-tombi-table-keys-order": "ascending",
           "x-taplo": {
             "hidden": true
           }
@@ -1199,6 +1204,7 @@
           "additionalProperties": {
             "$ref": "#/definitions/Dependency"
           },
+          "x-tombi-table-keys-order": "ascending",
           "x-taplo": {
             "links": {
               "key": "https://doc.rust-lang.org/cargo/reference/workspaces.html#the-workspace-section"
@@ -1748,6 +1754,7 @@
           "type": "string"
         }
       },
+      "x-tombi-table-keys-order": "ascending",
       "x-taplo": {
         "links": {
           "key": "https://doc.rust-lang.org/cargo/reference/manifest.html#the-badges-section"
@@ -1796,6 +1803,7 @@
       "additionalProperties": {
         "$ref": "#/definitions/Dependency"
       },
+      "x-tombi-table-keys-order": "ascending",
       "x-taplo": {
         "links": {
           "key": "https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#build-dependencies"
@@ -1811,6 +1819,7 @@
       "additionalProperties": {
         "$ref": "#/definitions/Dependency"
       },
+      "x-tombi-table-keys-order": "ascending",
       "x-taplo": {
         "hidden": true
       }
@@ -1827,6 +1836,7 @@
       "additionalProperties": {
         "$ref": "#/definitions/Dependency"
       },
+      "x-tombi-table-keys-order": "ascending",
       "x-taplo": {
         "links": {
           "key": "https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html"
@@ -1839,6 +1849,7 @@
       "additionalProperties": {
         "$ref": "#/definitions/Dependency"
       },
+      "x-tombi-table-keys-order": "ascending",
       "x-taplo": {
         "links": {
           "key": "https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#development-dependencies"
@@ -1854,6 +1865,7 @@
       "additionalProperties": {
         "$ref": "#/definitions/Dependency"
       },
+      "x-tombi-table-keys-order": "ascending",
       "x-taplo": {
         "hidden": true
       }
@@ -1955,6 +1967,7 @@
     },
     "replace": {
       "type": "object",
+      "x-tombi-table-keys-order": "ascending",
       "additionalProperties": {
         "$ref": "#/definitions/Dependency"
       },
@@ -1964,6 +1977,7 @@
     },
     "target": {
       "type": "object",
+      "x-tombi-table-keys-order": "ascending",
       "additionalProperties": {
         "$ref": "#/definitions/Platform"
       }
