@@ -249,7 +249,6 @@
     "partial-pyright.json",
     "pep-723.json",
     "pyproject.json",
-    "pyproject-tools.json",
     "sarif-2.1.0-rtm.0.json",
     "sarif-2.1.0-rtm.1.json",
     "sarif-2.1.0-rtm.2.json",
@@ -278,7 +277,8 @@
     "metaschema-draft-07-unofficial-strict.json",
     "glazewm.json",
     "youtrack-app.json",
-    "cinnamon-spice-settings.json"
+    "cinnamon-spice-settings.json",
+    "pnpm-workspace.json"
   ],
   "fileMatchConflict": [
     // Name conflicts must be avoided. Do not add additional items here
@@ -318,7 +318,6 @@
     "partial-fusion-texture-metadata.json", // minecraft-texture-mcmeta.json[fusion]
     "partial-taskipy.json", // pyproject.json[tool.taskipy]
     "poetry.json", // backwards-compat
-    "pyproject-tools.json",
     "setuptools.json", // backwards-compat
     "scikit-build.json", // backwards-compat
     "azure-deviceupdate-manifest-definitions-4.0.json",
@@ -992,6 +991,12 @@
     "partial-pyright.json": {
       "unknownKeywords": ["markdownDescription", "x-intellij-html-description"]
     },
+    "partial-pytest.json": {
+      "unknownKeywords": [
+        "x-tombi-array-values-order",
+        "x-tombi-table-keys-order"
+      ]
+    },
     "partial-setuptools.json": {
       "unknownFormat": [
         "python-module-name",
@@ -1037,7 +1042,6 @@
         "partial-taskipy.json",
         "partial-tox.json",
         "poetry.json",
-        "pyproject-tools.json",
         "ruff.json",
         "tombi.json",
         "uv.json",
@@ -1101,53 +1105,7 @@
         "partial-poe.json",
         "partial-poetry.json",
         "partial-pyright.json",
-        "partial-repo-review.json",
-        "partial-scikit-build.json",
-        "partial-setuptools.json",
-        "partial-setuptools-scm.json",
-        "partial-taskipy.json",
-        "partial-tox.json",
-        "poetry.json",
-        "pyproject-tools.json",
-        "ruff.json",
-        "tombi.json",
-        "uv.json",
-        "base.json"
-      ],
-      "unknownFormat": [
-        "uint16",
-        "uint8",
-        "uint",
-        "int",
-        "python-module-name",
-        "pep508-identifier",
-        "python-qualified-identifier",
-        "python-identifier",
-        "pep561-stub-name"
-      ],
-      "unknownKeywords": [
-        "markdownDescription",
-        "x-taplo",
-        "x-taplo-info",
-        "x-tombi-toml-version",
-        "x-tombi-table-keys-order",
-        "x-tombi-array-values-order",
-        "x-intellij-html-description",
-        "x-intellij-language-injection"
-      ]
-    },
-    "pyproject-tools.json": {
-      "externalSchema": [
-        "hatch.json",
-        "maturin.json",
-        "partial-black.json",
-        "partial-cibuildwheel.json",
-        "partial-mypy.json",
-        "partial-pdm.json",
-        "partial-pdm-dockerize.json",
-        "partial-poe.json",
-        "partial-poetry.json",
-        "partial-pyright.json",
+        "partial-pytest.json",
         "partial-repo-review.json",
         "partial-scikit-build.json",
         "partial-setuptools.json",
@@ -1277,6 +1235,12 @@
         "python-identifier",
         "pep561-stub-name"
       ]
+    },
+    "snowflake-config.json": {
+      "unknownKeywords": ["x-tombi-toml-version", "x-tombi-table-keys-order"]
+    },
+    "snowflake-connections.json": {
+      "unknownKeywords": ["x-tombi-toml-version", "x-tombi-table-keys-order"]
     },
     "staticwebapp.config.json": {
       "unknownKeywords": ["examples"]

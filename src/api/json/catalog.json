@@ -2317,14 +2317,20 @@
       "name": "KSail",
       "description": "Configuration for KSail",
       "fileMatch": [
-        "ksail-cluster.yaml",
-        "ksail-cluster.yml",
-        "ksail-config.yaml",
-        "ksail-config.yml",
-        "ksail.yaml",
-        "ksail.yml",
+        "ksail-*.yaml",
+        "ksail-*.yml",
+        "ksail_*.yaml",
+        "ksail_*.yml",
+        "ksail.*.yaml",
+        "ksail.*.yml",
+        "*-ksail.yaml",
+        "*-ksail.yml",
+        "*_ksail.yaml",
+        "*_ksail.yml",
         "*.ksail.yaml",
-        "*.ksail.yml"
+        "*.ksail.yml",
+        "ksail.yaml",
+        "ksail.yml"
       ],
       "url": "https://raw.githubusercontent.com/devantler/ksail/refs/heads/main/schemas/ksail-cluster-schema.json"
     },
@@ -2788,6 +2794,12 @@
         "hz-*.json"
       ],
       "url": "https://hazelcast.com/schema/config/hazelcast-config-5.5.json"
+    },
+    {
+      "name": "Homer dashboard configuration",
+      "description": "Home dashboard configuration file. Documentation: https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md",
+      "fileMatch": [],
+      "url": "https://raw.githubusercontent.com/bastienwirtz/homer/main/.schema/config-schema.json"
     },
     {
       "name": "host.json",
@@ -4483,6 +4495,11 @@
       "url": "https://raw.githubusercontent.com/microsoft/pyright/main/packages/vscode-pyright/schemas/pyrightconfig.schema.json"
     },
     {
+      "name": "pytest",
+      "description": "pytest configuration",
+      "url": "https://json.schemastore.org/partial-pytest.json"
+    },
+    {
       "name": "Qgoda",
       "description": "Qgoda static site generator configuration file format",
       "fileMatch": [
@@ -4998,6 +5015,21 @@
       "description": "snapcraft project. Documentation: https://snapcraft.io",
       "fileMatch": [".snapcraft.yaml", "snapcraft.yaml"],
       "url": "https://raw.githubusercontent.com/snapcore/snapcraft/master/schema/snapcraft.json"
+    },
+    {
+      "name": "snowflake-config",
+      "description": "Configuration file for Snowflake",
+      "fileMatch": ["**/.snowflake/config.toml", "**/snowflake/config.toml"],
+      "url": "https://json.schemastore.org/snowflake-config.json"
+    },
+    {
+      "name": "snowflake-connections",
+      "description": "Configuration file for Snowflake connections",
+      "fileMatch": [
+        "**/.snowflake/connections.toml",
+        "**/snowflake/connections.toml"
+      ],
+      "url": "https://json.schemastore.org/snowflake-connections.json"
     },
     {
       "name": "Solidarity",
@@ -7710,6 +7742,12 @@
       "versions": {
         "19.0.0": "https://json.schemastore.org/vtcfg-v19.0.0.json"
       }
+    },
+    {
+      "name": "sake",
+      "description": "Configuration for Sake, Swift-based utility for managing project commands",
+      "fileMatch": [".sake.yml"],
+      "url": "https://json.schemastore.org/sake.json"
     }
   ]
 }

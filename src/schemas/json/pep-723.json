@@ -34,7 +34,25 @@
       "examples": [["attrs", "requests ~= 2.28"]]
     },
     "tool": {
-      "$ref": "https://json.schemastore.org/pyproject-tools.json"
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      },
+      "title": "Tool-specific configuration",
+      "description": "Every tool that is used by the project can have users specify configuration data as long as they use a sub-table within `[tool]`. Generally a project can use the subtable `tool.$NAME` if, and only if, they own the entry for `$NAME` in the Cheeseshop/PyPI.",
+      "markdownDescription": "Every tool that is used by the project can have users specify configuration data as long as they use a sub-table within `[tool]`. Generally a project can use the subtable `tool.$NAME` if, and only if, they own the entry for `$NAME` in the Cheeseshop/PyPI.",
+      "x-intellij-html-description": "<p>Every tool that is used by the project can have users specify configuration data as long as they use a sub-table within <code>[tool]</code>. Generally a project can use the subtable <code>tool.$NAME</code> if, and only if, they own the entry for <code>$NAME</code> in the Cheeseshop/PyPI.</p>",
+      "x-taplo": {
+        "links": {
+          "key": "https://packaging.python.org/en/latest/specifications/pyproject-toml/#arbitrary-tool-configuration-the-tool-table"
+        }
+      },
+      "x-tombi-table-keys-order": "ascending",
+      "properties": {
+        "uv": {
+          "$ref": "https://json.schemastore.org/uv.json"
+        }
+      }
     }
   }
 }
