@@ -235,6 +235,24 @@
       "url": "https://raw.githubusercontent.com/Scandltd/storm-petrel/main/generator/assets/appsettings.StormPetrel.Schema.json"
     },
     {
+      "name": "aqua.yaml",
+      "description": "aqua configuration file",
+      "fileMatch": [".aqua.yaml", ".aqua.yml", "aqua.yaml", "aqua.yml"],
+      "url": "https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/aqua-yaml.json"
+    },
+    {
+      "name": "aqua-generate-registry.yaml",
+      "description": "aqua generate registry configuration file",
+      "fileMatch": ["aqua-generate-registry.yaml"],
+      "url": "https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/aqua-generate-registry.json"
+    },
+    {
+      "name": "aqua-policy.yaml",
+      "description": "aqua policy configuration file",
+      "fileMatch": [".aqua-policy.yaml", "aqua-policy.yaml"],
+      "url": "https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/policy.json"
+    },
+    {
       "name": "arb.json",
       "description": "Application Resource Bundle",
       "fileMatch": ["arb.json"],
@@ -307,10 +325,11 @@
       "name": "Aurora Agile Meta-Framework",
       "description": "Yaml for Aurora Agile Meta-Framework",
       "fileMatch": ["*.aurora.yaml", "*.aurora.yml"],
-      "url": "https://json.schemastore.org/aurora-1.1.json",
+      "url": "https://json.schemastore.org/aurora-1.2.json",
       "versions": {
         "1.0": "https://json.schemastore.org/aurora-1.0.json",
-        "1.1": "https://json.schemastore.org/aurora-1.1.json"
+        "1.1": "https://json.schemastore.org/aurora-1.1.json",
+        "1.2": "https://json.schemastore.org/aurora-1.2.json"
       }
     },
     {
@@ -1036,6 +1055,12 @@
       "url": "https://raw.githubusercontent.com/conda-forge/conda-smithy/main/conda_smithy/data/conda-forge.json"
     },
     {
+      "name": "Convex",
+      "description": "Configuration for Convex project settings",
+      "fileMatch": ["convex.json"],
+      "url": "https://json.schemastore.org/convex.json"
+    },
+    {
       "name": "Conjure",
       "description": "Conjure Human-Readable Format",
       "fileMatch": ["**/conjure/**.yml"],
@@ -1131,31 +1156,40 @@
     {
       "name": "dbt Dependencies",
       "description": "dbt's dependencies.yml file for external packages and cross-project refs",
-      "fileMatch": ["**/*dbt*/dependencies.{yaml,yml}"],
+      "fileMatch": ["**/*dbt*/dependencies.yaml", "**/*dbt*/dependencies.yml"],
       "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/dependencies-latest.json"
     },
     {
       "name": "dbt Project",
       "description": "dbt's project configuration file",
-      "fileMatch": ["dbt_project.{yaml,yml}"],
+      "fileMatch": ["dbt_project.yaml", "dbt_project.yml"],
       "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/dbt_project-latest.json"
     },
     {
       "name": "dbt Packages",
       "description": "dbt's packages.yml file for external packages",
-      "fileMatch": ["**/*dbt*/packages.{yaml,yml}"],
+      "fileMatch": ["**/*dbt*/packages.yaml", "**/*dbt*/packages.yml"],
       "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/packages-latest.json"
     },
     {
       "name": "dbt Selectors",
       "description": "dbt's selectors.yml file for configuring YAML selectors",
-      "fileMatch": ["**/*dbt*/selectors.{yaml,yml}"],
+      "fileMatch": ["**/*dbt*/selectors.yaml", "**/*dbt*/selectors.yml"],
       "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/selectors-latest.json"
     },
     {
       "name": "dbt YAML files",
       "description": "dbt YAML files configurations",
-      "fileMatch": ["**/*dbt*/{macros,models,seeds,snapshots}/**/*.{yaml,yml}"],
+      "fileMatch": [
+        "**/*dbt*/macros/**/*.yaml",
+        "**/*dbt*/macros/**/*.yml",
+        "**/*dbt*/models/**/*.yaml",
+        "**/*dbt*/models/**/*.yml",
+        "**/*dbt*/seeds/**/*.yaml",
+        "**/*dbt*/seeds/**/*.yml",
+        "**/*dbt*/snapshots/**/*.yaml",
+        "**/*dbt*/snapshots/**/*.yml"
+      ],
       "url": "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/latest/dbt_yml_files-latest.json"
     },
     {
@@ -1530,7 +1564,7 @@
         "cloudformation.yml",
         "cloudformation.yaml"
       ],
-      "url": "https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json"
+      "url": "https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json"
     },
     {
       "name": "AWS CloudFormation Serverless Application Model (SAM)",
@@ -1627,6 +1661,12 @@
       "description": "CoffeeLint configuration file",
       "fileMatch": ["coffeelint.json"],
       "url": "https://json.schemastore.org/coffeelint.json"
+    },
+    {
+      "name": "committed.toml",
+      "description": "committed configuration file",
+      "fileMatch": ["committed.toml"],
+      "url": "https://raw.githubusercontent.com/crate-ci/committed/master/config.schema.json"
     },
     {
       "name": "composer.json",
@@ -3268,7 +3308,22 @@
       "name": "Lefthook",
       "description": "Fast and powerful Git hooks manager",
       "fileMatch": [
-        "{.lefthook,lefthook,lefthook-local,.lefthook-local}.{yml,yaml,toml,json}"
+        ".lefthook.json",
+        ".lefthook.toml",
+        ".lefthook.yaml",
+        ".lefthook.yml",
+        ".lefthook-local.json",
+        ".lefthook-local.toml",
+        ".lefthook-local.yaml",
+        ".lefthook-local.yml",
+        "lefthook.json",
+        "lefthook.toml",
+        "lefthook.yaml",
+        "lefthook.yml",
+        "lefthook-local.json",
+        "lefthook-local.toml",
+        "lefthook-local.yaml",
+        "lefthook-local.yml"
       ],
       "url": "https://raw.githubusercontent.com/evilmartians/lefthook/master/schema.json"
     },
@@ -4589,6 +4644,18 @@
       "url": "https://json.schemastore.org/rehyperc.json"
     },
     {
+      "name": "release-please-config.json",
+      "description": "Release Please manifest configuration file",
+      "fileMatch": ["release-please-config.json"],
+      "url": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+    },
+    {
+      "name": "release-please-manifest.json",
+      "description": "Release Please manifest versions file",
+      "fileMatch": [".release-please-manifest.json"],
+      "url": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/manifest.json"
+    },
+    {
       "name": "release-plz.toml",
       "description": "Release-plz configuration file",
       "fileMatch": ["release-plz.toml", ".release-plz.toml"],
@@ -5458,6 +5525,12 @@
       "url": "https://json.schemastore.org/typo3.json"
     },
     {
+      "name": "typos.toml",
+      "description": "typos configuration file",
+      "fileMatch": ["typos.toml", "_typos.toml", ".typos.toml"],
+      "url": "https://raw.githubusercontent.com/crate-ci/typos/master/config.schema.json"
+    },
+    {
       "name": "typings.json",
       "description": "Typings TypeScript definitions manager definition file",
       "fileMatch": ["typings.json"],
@@ -5899,7 +5972,12 @@
     {
       "name": "mirrord config",
       "description": "mirrord",
-      "fileMatch": ["*.mirrord.{toml,json,yaml,yml}"],
+      "fileMatch": [
+        "*.mirrord.json",
+        "*.mirrord.toml",
+        "*.mirrord.yaml",
+        "*.mirrord.yml"
+      ],
       "url": "https://raw.githubusercontent.com/metalbear-co/mirrord/main/mirrord-schema.json"
     },
     {
@@ -5911,7 +5989,11 @@
         "mise.toml",
         "mise.*.toml",
         "**/.mise/config.toml",
-        "**/mise/config.toml"
+        "**/.mise/config.*.toml",
+        "**/.mise/conf.d/*.toml",
+        "**/mise/config.toml",
+        "**/mise/config.*.toml",
+        "**/mise/conf.d/*.toml"
       ],
       "url": "https://mise.jdx.dev/schema/mise.json"
     },
@@ -5959,6 +6041,12 @@
       "versions": {
         "0.6.2": "https://json.schemastore.org/hemtt-0.6.2.json"
       }
+    },
+    {
+      "name": "Node.js configuration",
+      "description": "The Node.js configuration file",
+      "fileMatch": ["node.config.json"],
+      "url": "https://nodejs.org/docs/latest/node-config-schema.json"
     },
     {
       "name": "now",
@@ -6100,7 +6188,15 @@
       "name": "Windows Package Manager Locale Manifest",
       "description": "Windows Package Manager Locale Manifest file, used for detailing locale specific metadata",
       "fileMatch": [
-        "**/manifests/?/*/*/*/*.*.locale.{en-US,fr-FR,it-IT,ja-JP,ko-KR,pt-BR,ru-RU,zh-CN,zh-TW}.yaml"
+        "**/manifests/?/*/*/*/*.*.locale.en-US.yaml",
+        "**/manifests/?/*/*/*/*.*.locale.fr-FR.yaml",
+        "**/manifests/?/*/*/*/*.*.locale.it-IT.yaml",
+        "**/manifests/?/*/*/*/*.*.locale.ja-JP.yaml",
+        "**/manifests/?/*/*/*/*.*.locale.ko-KR.yaml",
+        "**/manifests/?/*/*/*/*.*.locale.pt-BR.yaml",
+        "**/manifests/?/*/*/*/*.*.locale.ru-RU.yaml",
+        "**/manifests/?/*/*/*/*.*.locale.zh-CN.yaml",
+        "**/manifests/?/*/*/*/*.*.locale.zh-TW.yaml"
       ],
       "url": "https://json.schemastore.org/winget-pkgs-locale-1.0.0.json"
     },
@@ -7676,7 +7772,7 @@
     {
       "name": "Viash Component Config",
       "description": "Viash component config file",
-      "fileMatch": ["*.vsh.{yml,yaml}"],
+      "fileMatch": ["*.vsh.yaml", "*.vsh.yml"],
       "url": "https://raw.githubusercontent.com/viash-io/viash-schemas/refs/heads/main/json_schemas/latest/config.schema.json",
       "versions": {
         "0.7.5": "https://raw.githubusercontent.com/viash-io/viash-schemas/refs/heads/main/json_schemas/0.7.5/config.schema.json",
@@ -7695,7 +7791,7 @@
     {
       "name": "Viash Package Config",
       "description": "Viash package config file",
-      "fileMatch": ["_viash.{yml,yaml}"],
+      "fileMatch": ["_viash.yaml", "_viash.yml"],
       "url": "https://raw.githubusercontent.com/viash-io/viash-schemas/refs/heads/main/json_schemas/latest/package.schema.json",
       "versions": {
         "0.7.5": "https://raw.githubusercontent.com/viash-io/viash-schemas/refs/heads/main/json_schemas/0.7.5/package.schema.json",
@@ -7748,6 +7844,33 @@
       "description": "Configuration for Sake, Swift-based utility for managing project commands",
       "fileMatch": [".sake.yml"],
       "url": "https://json.schemastore.org/sake.json"
+    },
+    {
+      "name": "Open Know-How",
+      "description": "Open Source Hardware project metadata",
+      "fileMatch": [
+        "okh.json",
+        "okh.toml",
+        "okh.yaml",
+        "okh.yml",
+        "*.okh.json",
+        "*.okh.toml",
+        "*.okh.yaml",
+        "*.okh.yml"
+      ],
+      "url": "https://json.schemastore.org/okh.json"
+    },
+    {
+      "name": "Contextive Glossary",
+      "description": "A Contextive Domain Language Glossary",
+      "fileMatch": ["**/.contextive/definitions.yml", "*.glossary.yml"],
+      "url": "https://json.schemastore.org/contextive-glossary.json"
+    },
+    {
+      "name": "Google Digital Assetlinks",
+      "description": "JSON-encoded statement list in a well-known location on a principal",
+      "fileMatch": ["assetlinks.json"],
+      "url": "https://json.schemastore.org/assetlinks.json"
     }
   ]
 }
