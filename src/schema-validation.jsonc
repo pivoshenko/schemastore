@@ -41,7 +41,6 @@
     "catalog-info.json",
     "chrome-manifest.json",
     "chutzpah.json",
-    "circleciconfig.json",
     "cirrus.json",
     "cloud-sdk-pipeline-config-schema.json",
     "cloudify.json",
@@ -213,6 +212,7 @@
     "utam-page-object-1.5.0.json",
     "utam-page-object-2.0.3.json",
     "utam-page-object-2.2.0.json",
+    "utcm-monitor.json",
     "vega-lite.json",
     "vs-nesting.json",
     "vsext.json",
@@ -224,6 +224,7 @@
     "vtesttree-schema-v2.1.0.json",
     "vtesttree-schema-v2.2.0.json",
     "vtesttree-schema-v2.3.0.json",
+    "vtesttree-schema-v2.4.0.json",
     "web-types.json",
     "webextension.json",
     "webjob-publish-settings.json",
@@ -383,7 +384,8 @@
     "xunit-2.3.json",
     "xunit.runner.schema.json",
     "gitversion.json",
-    "lazygit.json"
+    "lazygit.json",
+    "circleciconfig.json"
   ],
   "catalogEntryNoLintNameOrDescription": [
     "https://json-schema.org/draft-04/schema",
@@ -398,7 +400,8 @@
     "https://json.schemastore.org/lsdlschema.json",
     "https://json.schemastore.org/BizTalkServerApplicationSchema.json",
     "https://json.schemastore.org/metaschema-draft-07-unofficial-strict.json",
-    "https://json.schemastore.org/schema-draft-v4.json"
+    "https://json.schemastore.org/schema-draft-v4.json",
+    "https://raw.githubusercontent.com/ShaitanLyss/these/main/hecate/hecate-json-schema.json"
   ],
   "options": {
     "abc-supply-plan-1.0.0.json": {
@@ -642,6 +645,9 @@
     },
     "cibuildwheel.json": {
       "externalSchema": ["partial-cibuildwheel.json"]
+    },
+    "cinnamon-spice.info.json": {
+      "externalSchema": ["base.json"]
     },
     "cirrus.json": {
       "unknownKeywords": ["fileMatch"]
@@ -970,6 +976,7 @@
         "poetry.json",
         "ruff.json",
         "tombi.json",
+        "ty.json",
         "uv.json",
         "base.json"
       ],
@@ -1025,6 +1032,7 @@
         "poetry.json",
         "ruff.json",
         "tombi.json",
+        "ty.json",
         "uv.json",
         "base.json"
       ],
@@ -1130,12 +1138,24 @@
     "template.json": {
       "unknownKeywords": ["deprecationMessage", "sources"]
     },
+    "ti8m-cdk-concrete-environment-config.json": {
+      "externalSchema": ["ti8m-cdk-environment-definition.json"]
+    },
+    "ti8m-cdk-concrete-environments.json": {
+      "externalSchema": [
+        "ti8m-cdk-concrete-environment-config.json",
+        "ti8m-cdk-environment-definition.json"
+      ]
+    },
     "toolinfo.1.1.0.json": {
       "externalSchema": ["licenses.1.json"],
       "unknownKeywords": ["authors", "version"]
     },
     "tsoa.json": {
       "externalSchema": ["tsconfig.json", "base-04.json"]
+    },
+    "ty.json": {
+      "unknownFormat": ["uint16", "uint8", "uint", "int"]
     },
     "uv.json": {
       "unknownFormat": ["uint16", "uint8", "uint", "int"]
