@@ -7,7 +7,7 @@
   "type": "object",
   "definitions": {
     "dependency": {
-      "$comment": "https://json.schemastore.org/package.json",
+      "$comment": "https://www.schemastore.org/package.json",
       "description": "Dependencies are specified with a simple hash of package name to version range.\nThe version range is a string which has one or more space-separated descriptors.\nDependencies can also be identified with a tarball or git URL.\n",
       "type": "object",
       "minProperties": 1,
@@ -76,12 +76,12 @@
       "$comment": "https://pnpm.io/catalogs",
       "$ref": "#/definitions/dependency",
       "description": "Define dependency version ranges as reusable constants,\nfor later reference in package.json files.\nThis (singular) field creates a catalog named default.\n",
-      "type": "object",
+      "type": ["object", "null"],
       "minProperties": 1
     },
     "catalogs": {
       "description": "Define arbitrarily named catalogs",
-      "type": "object",
+      "type": ["object", "null"],
       "minProperties": 1,
       "additionalProperties": {
         "$ref": "#/definitions/catalog"
@@ -760,6 +760,10 @@
     },
     "shellEmulator": {
       "description": "When true, pnpm will use a JavaScript implementation of a bash-like shell to execute scripts.",
+      "type": "boolean"
+    },
+    "saveExact": {
+      "description": "Saved dependencies will be configured with an exact version rather than using pnpm's default semver range operator.",
       "type": "boolean"
     }
   },
