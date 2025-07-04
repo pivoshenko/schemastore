@@ -3192,8 +3192,9 @@
       "name": "JReleaser",
       "description": "JReleaser config file",
       "fileMatch": ["jreleaser.yml", "jreleaser.json"],
-      "url": "https://www.schemastore.org/jreleaser-1.18.0.json",
+      "url": "https://www.schemastore.org/jreleaser-1.19.0.json",
       "versions": {
+        "1.19.0": "https://www.schemastore.org/jreleaser-1.19.0.json",
         "1.18.0": "https://www.schemastore.org/jreleaser-1.18.0.json",
         "1.17.0": "https://www.schemastore.org/jreleaser-1.17.0.json",
         "1.16.0": "https://www.schemastore.org/jreleaser-1.16.0.json",
@@ -4773,7 +4774,7 @@
       "name": "QType AI DSL",
       "description": "A DSL for rapid prototyping of AI applications",
       "fileMatch": ["qtype.config.yaml", "*.qtype.yaml"],
-      "url": "https://github.com/lou-k/qtype/blob/main/schema/qtype.schema.json"
+      "url": "https://raw.githubusercontent.com/lou-k/qtype/refs/heads/main/schema/qtype.schema.json"
     },
     {
       "name": "Railway",
