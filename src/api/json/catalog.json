@@ -127,7 +127,7 @@
       "name": ".aiproj.json",
       "description": "Settings for project analysis by the Application Inspector",
       "fileMatch": [".aiproj.json"],
-      "url": "https://www.schemastore.org/aiproj-1.6.json",
+      "url": "https://www.schemastore.org/aiproj-1.7.json",
       "versions": {
         "1.0": "https://www.schemastore.org/aiproj-1.0.json",
         "1.1": "https://www.schemastore.org/aiproj-1.1.json",
@@ -135,7 +135,8 @@
         "1.3": "https://www.schemastore.org/aiproj-1.3.json",
         "1.4": "https://www.schemastore.org/aiproj-1.4.json",
         "1.5": "https://www.schemastore.org/aiproj-1.5.json",
-        "1.6": "https://www.schemastore.org/aiproj-1.6.json"
+        "1.6": "https://www.schemastore.org/aiproj-1.6.json",
+        "1.7": "https://www.schemastore.org/aiproj-1.7.json"
       }
     },
     {
@@ -4113,12 +4114,23 @@
     },
     {
       "name": "Open Data Contract Standard (ODCS)",
-      "description": "Open Data Contract Standard contract file",
+      "description": "Open Data Contract Standard contract file, from the Bitol project at The Linux Foundation",
       "fileMatch": ["*.odcs.yaml", "*.odcs.yml"],
       "url": "https://raw.githubusercontent.com/bitol-io/open-data-contract-standard/main/schema/odcs-json-schema-latest.json",
       "versions": {
+        "v3.0.2": "https://github.com/bitol-io/open-data-contract-standard/blob/main/schema/odcs-json-schema-v3.0.2.json",
+        "v3.0.1": "https://github.com/bitol-io/open-data-contract-standard/blob/main/schema/odcs-json-schema-v3.0.1.json",
         "v3.0.0": "https://github.com/bitol-io/open-data-contract-standard/blob/main/schema/odcs-json-schema-v3.0.0.json",
         "v2.2.2": "https://github.com/bitol-io/open-data-contract-standard/blob/main/schema/odcs-json-schema-v2.2.2.json"
+      }
+    },
+    {
+      "name": "Open Data Product Standard (ODPS)",
+      "description": "Open Data Product Standard descriptor file, from the Bitol project at The Linux Foundation",
+      "fileMatch": ["*.odps.yaml", "*.odps.yml"],
+      "url": "https://raw.githubusercontent.com/bitol-io/open-data-product-standard/main/schema/odps-json-schema-latest.json",
+      "versions": {
+        "v0.9.0": "https://github.com/bitol-io/open-data-product-standard/blob/main/schema/odps-json-schema-v0.9.0.json"
       }
     },
     {
@@ -4938,7 +4950,8 @@
         "**/.gitlab/renovate.json",
         "**/.gitlab/renovate.json5",
         ".renovaterc",
-        ".renovaterc.json"
+        ".renovaterc.json",
+        ".renovaterc.json5"
       ],
       "url": "https://docs.renovatebot.com/renovate-schema.json"
     },
@@ -6125,6 +6138,12 @@
       "url": "https://www.schemastore.org/web-types.json"
     },
     {
+      "name": "WP-CLI",
+      "description": "WP-CLI is the official command-line tool for WordPress",
+      "fileMatch": ["wp-cli.local.yml", "wp-cli.yml", "**/.wp-cli/config.yml"],
+      "url": "https://raw.githubusercontent.com/wp-cli/wp-cli/refs/heads/main/schemas/wp-cli-config.json"
+    },
+    {
       "name": "Wrangler CLI",
       "description": "Wrangler is a command-line tool for building with Cloudflare developer products",
       "fileMatch": ["wrangler.json", "wrangler.toml"],
@@ -6566,7 +6585,7 @@
       "name": "Gradle Enterprise",
       "description": "Gradle Enterprise configuration",
       "fileMatch": ["*gradle-enterprise.yml", "*gradle-enterprise.yaml"],
-      "url": "https://docs.gradle.com/develocity/helm-admin/schema/gradle-enterprise-config-schema-12.json",
+      "url": "https://docs.gradle.com/develocity/helm-admin/schema/gradle-enterprise-config-schema-13.json",
       "versions": {
         "1.0": "https://docs.gradle.com/develocity/helm-admin/schema/gradle-enterprise-config-schema-1.json",
         "2.0": "https://docs.gradle.com/develocity/helm-admin/schema/gradle-enterprise-config-schema-2.json",
@@ -6579,7 +6598,8 @@
         "9.0": "https://docs.gradle.com/develocity/helm-admin/schema/gradle-enterprise-config-schema-9.json",
         "10.0": "https://docs.gradle.com/develocity/helm-admin/schema/gradle-enterprise-config-schema-10.json",
         "11.0": "https://docs.gradle.com/develocity/helm-admin/schema/gradle-enterprise-config-schema-11.json",
-        "12.0": "https://docs.gradle.com/develocity/helm-admin/schema/gradle-enterprise-config-schema-12.json"
+        "12.0": "https://docs.gradle.com/develocity/helm-admin/schema/gradle-enterprise-config-schema-12.json",
+        "13.0": "https://docs.gradle.com/develocity/helm-admin/schema/gradle-enterprise-config-schema-13.json"
       }
     },
     {
@@ -7717,6 +7737,17 @@
       "url": "https://www.schemastore.org/language-configuration.json"
     },
     {
+      "name": "LangGraph Platform configuration",
+      "description": "LangGraph Platform configuration file",
+      "fileMatch": [
+        "langgraph.json",
+        "langgraph.*.json",
+        ".langgraph.json",
+        ".langgraph.*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/langchain-ai/langgraph/main/libs/cli/schemas/version.schema.json"
+    },
+    {
       "name": "Any",
       "description": "Valid for any JSON file",
       "fileMatch": [],
@@ -7925,9 +7956,16 @@
     },
     {
       "name": "WireMock stub mapping",
-      "description": "WireMock stub mapping JSON. See https://wiremock.org/docs/stubbing/",
-      "fileMatch": ["wiremock-stub-mapping.yml", "wiremock-stub-mapping.yaml"],
-      "url": "https://www.schemastore.org/wiremock-stub-mapping.json"
+      "description": "WireMock single or multiple stub mapping JSON. See https://wiremock.org/docs/stubbing/",
+      "fileMatch": [
+        "wiremock-stub-mapping.yml",
+        "wiremock-stub-mapping.yaml",
+        "stubs.json",
+        "stub-mappings.json",
+        "stubs.yaml",
+        "stub-mappings.yaml"
+      ],
+      "url": "https://raw.githubusercontent.com/wiremock/wiremock/refs/heads/master/schemas/wiremock-stub-mapping-or-mappings.json"
     },
     {
       "name": "Bitmovin Encoding Template",
@@ -8271,6 +8309,18 @@
         "*.hecate.json"
       ],
       "url": "https://raw.githubusercontent.com/ShaitanLyss/these/main/hecate/hecate-json-schema.json"
+    },
+    {
+      "name": "Jujutsu (jj) VCS config",
+      "description": "Jujutsu (jj) configuration file",
+      "fileMatch": ["**/.jj/repo/config.toml", "**/jj/config.toml"],
+      "url": "https://jj-vcs.github.io/jj/latest/config-schema.json"
+    },
+    {
+      "name": "AWS Copilot Manifest",
+      "description": "Manifest YAML files for AWS Copilot services, environments, and pipelines. Documentation: https://aws.github.io/copilot-cli/docs/manifest/overview/",
+      "fileMatch": ["**/copilot/**/manifest.yml"],
+      "url": "https://sootyowl.github.io/aws-copilot-schemas/copilot-schema.json"
     }
   ]
 }
