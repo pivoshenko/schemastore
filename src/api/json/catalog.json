@@ -521,6 +521,7 @@
       "url": "https://raw.githubusercontent.com/ClementTsang/bottom/main/schema/v0.10/bottom.json",
       "versions": {
         "nightly": "https://raw.githubusercontent.com/ClementTsang/bottom/main/schema/nightly/bottom.json",
+        "0.11": "https://raw.githubusercontent.com/ClementTsang/bottom/main/schema/v0.11/bottom.json",
         "0.10": "https://raw.githubusercontent.com/ClementTsang/bottom/main/schema/v0.10/bottom.json",
         "0.9": "https://raw.githubusercontent.com/ClementTsang/bottom/main/schema/v0.9/bottom.json"
       }
@@ -1096,6 +1097,12 @@
       "description": "Backstage Catalog Info",
       "fileMatch": ["catalog-info.yaml"],
       "url": "https://www.schemastore.org/catalog-info.json"
+    },
+    {
+      "name": "Changie",
+      "description": "Changie configuration file",
+      "fileMatch": [".changie.yaml", ".changie.yml"],
+      "url": "https://changie.dev/schema.json"
     },
     {
       "name": "Charmcraft",
@@ -5726,6 +5733,12 @@
       }
     },
     {
+      "name": "Threagile",
+      "description": "Threagile Threat Model file",
+      "fileMatch": ["threagile.yaml", "threat-model.yaml"],
+      "url": "https://raw.githubusercontent.com/Threagile/threagile/refs/heads/master/support/schema.json"
+    },
+    {
       "name": "tizen_workspace.json",
       "description": "Tizen project workspace configuration file",
       "fileMatch": ["tizen_workspace.yaml"],
@@ -5864,7 +5877,7 @@
     {
       "name": "TSTyche",
       "description": "TSTyche configuration file",
-      "fileMatch": ["tstyche.config.json"],
+      "fileMatch": ["tstyche.json", "tstyche.config.json"],
       "url": "https://tstyche.org/schemas/config.json"
     },
     {
@@ -8456,6 +8469,12 @@
       "description": "Manifest YAML files for AWS Copilot services, environments, and pipelines. Documentation: https://aws.github.io/copilot-cli/docs/manifest/overview/",
       "fileMatch": ["**/copilot/**/manifest.yml"],
       "url": "https://sootyowl.github.io/aws-copilot-schemas/copilot-schema.json"
+    },
+    {
+      "name": "Terrateam config",
+      "description": "Terrateam configuration file",
+      "fileMatch": ["**/.terrateam/config.yaml", "**/.terrateam/config.yml"],
+      "url": "https://raw.githubusercontent.com/terrateamio/terrateam/refs/heads/main/api_schemas/terrat/config-schema.json"
     }
   ]
 }
