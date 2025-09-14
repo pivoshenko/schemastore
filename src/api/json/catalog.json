@@ -156,7 +156,7 @@
       "name": "ABCSupplyPlan",
       "description": "ABCSupplyPlan representing all the state for performing inventory optimization and expiry analysis in ABC-Plan MasterPlanner",
       "fileMatch": ["abc-supply-plan-*.json"],
-      "url": "https://www.schemastore.org/abc-supply-plan-10.1.0.json",
+      "url": "https://www.schemastore.org/abc-supply-plan-11.0.0.json",
       "versions": {
         "1.0.0": "https://www.schemastore.org/abc-supply-plan-1.0.0.json",
         "2.0.0": "https://www.schemastore.org/abc-supply-plan-2.0.0.json",
@@ -168,7 +168,8 @@
         "8.0.0": "https://www.schemastore.org/abc-supply-plan-8.0.0.json",
         "9.0.0": "https://www.schemastore.org/abc-supply-plan-9.0.0.json",
         "10.0.0": "https://www.schemastore.org/abc-supply-plan-10.0.0.json",
-        "10.1.0": "https://www.schemastore.org/abc-supply-plan-10.1.0.json"
+        "10.1.0": "https://www.schemastore.org/abc-supply-plan-10.1.0.json",
+        "11.0.0": "https://www.schemastore.org/abc-supply-plan-11.0.0.json"
       }
     },
     {
@@ -1464,7 +1465,7 @@
       "name": "Helm Unittest Test Suite",
       "description": "A Helm Unittest Test Suite file",
       "fileMatch": ["**/charts/*/tests/*.yaml"],
-      "url": "https://raw.githubusercontent.com/helm-unittest/helm-unittest/v0.5.1/schema/helm-testsuite.json"
+      "url": "https://raw.githubusercontent.com/helm-unittest/helm-unittest/refs/heads/main/schema/helm-testsuite.json"
     },
     {
       "name": "CircleCI config.yml",
@@ -2714,7 +2715,7 @@
         "**/*.gitlab-ci.yml",
         "**/*.gitlab-ci.yaml"
       ],
-      "url": "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"
+      "url": "https://gitlab.com/gitlab-org/gitlab-foss/-/raw/master/app/assets/javascripts/editor/schema/ci.json"
     },
     {
       "name": "Gitpod Automations",
@@ -3256,8 +3257,9 @@
       "name": "JReleaser",
       "description": "JReleaser config file",
       "fileMatch": ["jreleaser.yml", "jreleaser.json"],
-      "url": "https://www.schemastore.org/jreleaser-1.19.0.json",
+      "url": "https://www.schemastore.org/jreleaser-1.20.0.json",
       "versions": {
+        "1.20.0": "https://www.schemastore.org/jreleaser-1.20.0.json",
         "1.19.0": "https://www.schemastore.org/jreleaser-1.19.0.json",
         "1.18.0": "https://www.schemastore.org/jreleaser-1.18.0.json",
         "1.17.0": "https://www.schemastore.org/jreleaser-1.17.0.json",
@@ -5627,6 +5629,12 @@
       "url": "https://www.schemastore.org/stale.json"
     },
     {
+      "name": "Starfish",
+      "description": "Configuration file for Starfish",
+      "fileMatch": ["starfish.yml"],
+      "url": "https://raw.githubusercontent.com/veepee-oss/json-schema/refs/heads/main/starfish/1-latest/starfish-schema.json"
+    },
+    {
       "name": "Starship",
       "description": "Configuration file for Starship. Documentation: https://starship.rs",
       "fileMatch": ["starship.toml"],
@@ -6016,7 +6024,7 @@
     },
     {
       "name": "ui5.yaml",
-      "description": "UI5 Tooling Configuration File (ui5.yaml)",
+      "description": "UI5 CLI Configuration File (ui5.yaml)",
       "fileMatch": [
         "ui5.yaml",
         "*-ui5.yaml",
@@ -6025,11 +6033,11 @@
         "ui5-dist.yaml",
         "ui5-local.yaml"
       ],
-      "url": "https://sap.github.io/ui5-tooling/schema/ui5.yaml.json"
+      "url": "https://ui5.github.io/cli/schema/ui5.yaml.json"
     },
     {
       "name": "ui5-workspace.yaml",
-      "description": "UI5 Tooling Workspace Configuration File (ui5-workspace.yaml)",
+      "description": "UI5 CLI Workspace Configuration File (ui5-workspace.yaml)",
       "fileMatch": [
         "ui5-workspace.yaml",
         "*-ui5-workspace.yaml",
@@ -6038,7 +6046,7 @@
         "ui5-workspace-dist.yaml",
         "ui5-workspace-local.yaml"
       ],
-      "url": "https://sap.github.io/ui5-tooling/schema/ui5-workspace.yaml.json"
+      "url": "https://ui5.github.io/cli/schema/ui5-workspace.yaml.json"
     },
     {
       "name": "UTAM Page Object",
@@ -8524,6 +8532,12 @@
       "url": "https://raw.githubusercontent.com/ShaitanLyss/these/main/hecate/hecate-json-schema.json"
     },
     {
+      "name": "Revel Digital Gadget Definition File",
+      "description": "Revel Digital gadget definition file. See https://developer.reveldigital.com/gadgets for more information",
+      "fileMatch": ["gadget.yml", "gadget.yaml"],
+      "url": "https://www.schemastore.org/gadget-yaml.json"
+    },
+    {
       "name": "Jujutsu (jj) VCS config",
       "description": "Jujutsu (jj) configuration file",
       "fileMatch": ["**/.jj/repo/config.toml", "**/jj/config.toml"],
@@ -8552,6 +8566,39 @@
       "description": "Zarf Packages contain a comprehensive description of system software and all of it's components for declaratively deploying in a disconnected environment",
       "fileMatch": ["**/zarf.yaml", "**/zarf.yml"],
       "url": "https://www.schemastore.org/zarf.json"
+    },
+    {
+      "name": "Robust Station Image",
+      "description": "Space Station 14 RSI validation",
+      "fileMatch": ["**/*.rsi/meta.json"],
+      "url": "https://raw.githubusercontent.com/space-wizards/RobustToolbox/refs/heads/master/Schemas/rsi.json"
+    },
+    {
+      "name": "EUDR IOP Standard Exchange Format (EUDR-X)",
+      "description": "structured exchange of data related to the EU Deforestation Regulation (EUDR)",
+      "fileMatch": ["*eudr-x.json"],
+      "url": "https://raw.githubusercontent.com/initiative-online-print/eudr-iop-standard-exchange-format/refs/heads/main/json/schema.json",
+      "versions": {
+        "1.0.0": "https://raw.githubusercontent.com/initiative-online-print/eudr-iop-standard-exchange-format/refs/tags/v1.0.0/json/schema.json",
+        "2.0.0": "https://raw.githubusercontent.com/initiative-online-print/eudr-iop-standard-exchange-format/refs/tags/v2.0.0/json/schema.json"
+      }
+    },
+    {
+      "name": "Azure IoT Operations connector metadata",
+      "description": "For writing connector metadata documents to be used in Azure IoT Operations scenarios",
+      "url": "https://www.schemastore.org/aio-connector-metadata-5.0-preview.json",
+      "versions": {
+        "5.0-preview": "https://www.schemastore.org/aio-connector-metadata-5.0-preview.json"
+      }
+    },
+    {
+      "name": "Evolving Resolutive Process notation",
+      "description": "For describing contradiction-based processes with storing changes and authors",
+      "fileMatch": ["*.erpn.yml", "*.erpn.yaml", "*.erpn.toml", "*.erpn.json"],
+      "url": "https://www.schemastore.org/evolving-resolutive-process-notation-1.0.json",
+      "versions": {
+        "1.0": "https://www.schemastore.org/evolving-resolutive-process-notation-1.0.json"
+      }
     }
   ]
 }
