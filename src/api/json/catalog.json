@@ -127,7 +127,7 @@
       "name": ".aiproj.json",
       "description": "Settings for project analysis by the Application Inspector",
       "fileMatch": [".aiproj.json"],
-      "url": "https://www.schemastore.org/aiproj-1.7.json",
+      "url": "https://www.schemastore.org/aiproj-1.8.json",
       "versions": {
         "1.0": "https://www.schemastore.org/aiproj-1.0.json",
         "1.1": "https://www.schemastore.org/aiproj-1.1.json",
@@ -136,7 +136,8 @@
         "1.4": "https://www.schemastore.org/aiproj-1.4.json",
         "1.5": "https://www.schemastore.org/aiproj-1.5.json",
         "1.6": "https://www.schemastore.org/aiproj-1.6.json",
-        "1.7": "https://www.schemastore.org/aiproj-1.7.json"
+        "1.7": "https://www.schemastore.org/aiproj-1.7.json",
+        "1.8": "https://www.schemastore.org/aiproj-1.8.json"
       }
     },
     {
@@ -1552,7 +1553,14 @@
     {
       "name": "Codecov configuration files",
       "description": "codecov.yml files",
-      "fileMatch": [".codecov.yml", "codecov.yml"],
+      "fileMatch": [
+        "**/.github/.codecov.yml",
+        "**/.github/codecov.yml",
+        "**/dev/.codecov.yml",
+        "**/dev/codecov.yml",
+        ".codecov.yml",
+        "codecov.yml"
+      ],
       "url": "https://www.schemastore.org/codecov.json"
     },
     {
@@ -2907,6 +2915,12 @@
       "url": "https://raw.githubusercontent.com/tree-sitter/tree-sitter/master/docs/assets/schemas/config.schema.json"
     },
     {
+      "name": "Treefmt",
+      "description": "Treefmt configuration file",
+      "fileMatch": ["treefmt.toml"],
+      "url": "https://www.schemastore.org/treefmt.json"
+    },
+    {
       "name": "GraphQL Mesh",
       "description": "GraphQL Mesh config file",
       "fileMatch": [
@@ -3071,6 +3085,12 @@
       "description": "Benchmark definition format for the Hyperfoil HTTP benchmark framework",
       "fileMatch": ["*.hf.yaml"],
       "url": "https://hyperfoil.io/schema.json"
+    },
+    {
+      "name": "Hulak Configuration",
+      "description": "Hulak API client configuration file",
+      "fileMatch": ["**/*.hk.yaml", "**/*.hk.yml", "**/*.hk.json"],
+      "url": "https://raw.githubusercontent.com/xaaha/hulak/refs/heads/main/assets/schema.json"
     },
     {
       "name": "IBM Zapp document",
@@ -3645,6 +3665,12 @@
       "description": "Luau language configuration file",
       "fileMatch": [".luaurc"],
       "url": "https://www.schemastore.org/luaurc.json"
+    },
+    {
+      "name": "Mado configuration",
+      "description": "Mado markdown linter configuration file",
+      "fileMatch": [".mado.toml", "mado.toml"],
+      "url": "https://raw.githubusercontent.com/akiomik/mado/refs/heads/main/pkg/json-schema/mado.json"
     },
     {
       "name": "MapEHR Mapping",
@@ -8586,9 +8612,11 @@
     {
       "name": "Azure IoT Operations connector metadata",
       "description": "For writing connector metadata documents to be used in Azure IoT Operations scenarios",
-      "url": "https://www.schemastore.org/aio-connector-metadata-5.0-preview.json",
+      "url": "https://www.schemastore.org/aio-connector-metadata-7.0-preview.json",
       "versions": {
-        "5.0-preview": "https://www.schemastore.org/aio-connector-metadata-5.0-preview.json"
+        "5.0-preview": "https://www.schemastore.org/aio-connector-metadata-5.0-preview.json",
+        "6.0-preview": "https://www.schemastore.org/aio-connector-metadata-6.0-preview.json",
+        "7.0-preview": "https://www.schemastore.org/aio-connector-metadata-7.0-preview.json"
       }
     },
     {
