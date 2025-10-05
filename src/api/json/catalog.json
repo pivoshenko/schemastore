@@ -347,6 +347,27 @@
       "url": "https://www.schemastore.org/asconfig-schema.json"
     },
     {
+      "name": "ast-grep sgconfig.yml",
+      "description": "ast-grep project config",
+      "fileMatch": ["sgconfig.yml", "sgconfig.yaml"],
+      "url": "https://raw.githubusercontent.com/ast-grep/ast-grep/main/schemas/project.json"
+    },
+    {
+      "name": "ast-grep rules",
+      "description": "ast-grep rule config",
+      "fileMatch": [
+        "**/.astgrep/rules/**/*.yaml",
+        "**/.astgrep/rules/**/*.yml",
+        "**/.ast-grep/rules/**/*.yaml",
+        "**/.ast-grep/rules/**/*.yml",
+        "**/ast-grep/rules/**/*.yaml",
+        "**/ast-grep/rules/**/*.yml",
+        "**/astgrep/rules/**/*.yaml",
+        "**/astgrep/rules/**/*.yml"
+      ],
+      "url": "https://raw.githubusercontent.com/ast-grep/ast-grep/main/schemas/rule.json"
+    },
+    {
       "name": "AsyncAPI",
       "description": "AsyncAPI documentation files",
       "fileMatch": ["*asyncapi*.json", "*asyncapi*.yml", "*asyncapi*.yaml"],
@@ -583,9 +604,9 @@
         "*.cv.yml",
         "*.cv.toml"
       ],
-      "url": "https://raw.githubusercontent.com/hexagonkt/codecv/master/cv.schema.json",
+      "url": "https://raw.githubusercontent.com/codecv-co/codecv/master/cv.schema.json",
       "versions": {
-        "0.9.9": "https://raw.githubusercontent.com/hexagonkt/codecv/0.9.9/cv.schema.json"
+        "0.9.24": "https://raw.githubusercontent.com/codecv-co/codecv/0.9.24/cv.schema.json"
       }
     },
     {
@@ -4733,7 +4754,7 @@
       "name": "project.owasp.yaml",
       "description": "OWASP project",
       "fileMatch": ["project.owasp.yaml"],
-      "url": "https://raw.githubusercontent.com/OWASP/Nest/main/schema/project.json"
+      "url": "https://raw.githubusercontent.com/OWASP/nest-schema/main/project.json"
     },
     {
       "name": "prometheus.json",
@@ -8616,7 +8637,9 @@
       "versions": {
         "5.0-preview": "https://www.schemastore.org/aio-connector-metadata-5.0-preview.json",
         "6.0-preview": "https://www.schemastore.org/aio-connector-metadata-6.0-preview.json",
-        "7.0-preview": "https://www.schemastore.org/aio-connector-metadata-7.0-preview.json"
+        "7.0-preview": "https://www.schemastore.org/aio-connector-metadata-7.0-preview.json",
+        "8.0-preview": "https://www.schemastore.org/aio-connector-metadata-8.0-preview.json",
+        "9.0-preview": "https://www.schemastore.org/aio-connector-metadata-9.0-preview.json"
       }
     },
     {
@@ -8626,6 +8649,20 @@
       "url": "https://www.schemastore.org/evolving-resolutive-process-notation-1.0.json",
       "versions": {
         "1.0": "https://www.schemastore.org/evolving-resolutive-process-notation-1.0.json"
+      }
+    },
+    {
+      "name": "Deployah Configuration",
+      "description": "CLI tool that makes Kubernetes deployments effortless—no Helm or K8s expertise required",
+      "fileMatch": [
+        "deployah.yaml",
+        "deployah.yml",
+        ".deployah.yaml",
+        ".deployah.yml"
+      ],
+      "url": "https://deployah.dev/schemas/v1-alpha.1/manifest.json",
+      "versions": {
+        "v1-alpha.1": "https://deployah.dev/schemas/v1-alpha.1/manifest.json"
       }
     }
   ]
