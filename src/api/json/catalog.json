@@ -157,7 +157,7 @@
       "name": "ABCSupplyPlan",
       "description": "ABCSupplyPlan representing all the state for performing inventory optimization and expiry analysis in ABC-Plan MasterPlanner",
       "fileMatch": ["abc-supply-plan-*.json"],
-      "url": "https://www.schemastore.org/abc-supply-plan-11.0.0.json",
+      "url": "https://www.schemastore.org/abc-supply-plan-11.1.0.json",
       "versions": {
         "1.0.0": "https://www.schemastore.org/abc-supply-plan-1.0.0.json",
         "2.0.0": "https://www.schemastore.org/abc-supply-plan-2.0.0.json",
@@ -170,7 +170,8 @@
         "9.0.0": "https://www.schemastore.org/abc-supply-plan-9.0.0.json",
         "10.0.0": "https://www.schemastore.org/abc-supply-plan-10.0.0.json",
         "10.1.0": "https://www.schemastore.org/abc-supply-plan-10.1.0.json",
-        "11.0.0": "https://www.schemastore.org/abc-supply-plan-11.0.0.json"
+        "11.0.0": "https://www.schemastore.org/abc-supply-plan-11.0.0.json",
+        "11.1.0": "https://www.schemastore.org/abc-supply-plan-11.1.0.json"
       }
     },
     {
@@ -4005,6 +4006,12 @@
       "url": "https://raw.githubusercontent.com/netascode/schema/main/schema.json"
     },
     {
+      "name": "Next Gen UI Agent Configuration",
+      "description": "NextGen UI Agent configuration. Documentation: https://redhat-ux.github.io/next-gen-ui-agent/guide/configuration/",
+      "fileMatch": ["ngui_*.yaml", "ngui_*.yml", "ngui_*.json"],
+      "url": "https://raw.githubusercontent.com/RedHat-UX/next-gen-ui-agent/refs/heads/main/spec/config/agent_config.schema.json"
+    },
+    {
       "name": "nFPM",
       "description": "nFPM configuration file",
       "fileMatch": ["nfpm.yaml"],
@@ -4171,6 +4178,17 @@
       "description": "Omnisharp Configuration file",
       "fileMatch": ["omnisharp.json"],
       "url": "https://www.schemastore.org/omnisharp.json"
+    },
+    {
+      "name": "Ona Automations",
+      "description": "Configuration for Ona Automations",
+      "fileMatch": [
+        "**/.ona/automations.json",
+        "**/.ona/automations.yaml",
+        "**/.ona/automations.yml",
+        "**/.ona/automation.yaml"
+      ],
+      "url": "https://app.ona.com/jsonschema/v1/automations_file.jsonschema.json"
     },
     {
       "name": "openapi.json",
@@ -5626,6 +5644,12 @@
         "1.0": "https://www.schemastore.org/specif-1.0.json",
         "1.1": "https://www.schemastore.org/specif-1.1.json"
       }
+    },
+    {
+      "name": "Specmatic Configuration",
+      "description": "Configuration file for Specmatic, a contract-driven testing tool",
+      "fileMatch": ["specmatic.json", "specmatic.yaml", "specmatic.yml"],
+      "url": "https://www.schemastore.org/specmatic.json"
     },
     {
       "name": "Sponge Mixin configuration",
@@ -8663,6 +8687,14 @@
       "url": "https://deployah.dev/schemas/v1-alpha.1/manifest.json",
       "versions": {
         "v1-alpha.1": "https://deployah.dev/schemas/v1-alpha.1/manifest.json"
+      }
+    },
+    {
+      "name": "Azure IoT Operations Wasm Graph Config",
+      "description": "",
+      "url": "https://www.schemastore.org/aio-wasm-graph-config-1.0.0.json",
+      "versions": {
+        "1.0.0": "https://www.schemastore.org/aio-wasm-graph-config-1.0.0.json"
       }
     }
   ]
