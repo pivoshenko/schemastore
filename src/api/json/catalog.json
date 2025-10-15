@@ -3220,6 +3220,15 @@
       "url": "https://raw.githubusercontent.com/ioBroker/ioBroker.js-controller/master/schemas/io-package.json"
     },
     {
+      "name": "ixpect.conf.yaml",
+      "description": "IXpect configuration file",
+      "fileMatch": ["ixpect.conf.yaml"],
+      "url": "https://ixpect.net/0.1/schema/ixpect.conf.schema.json",
+      "versions": {
+        "0.1": "https://ixpect.net/0.1/schema/ixpect.conf.schema.json"
+      }
+    },
+    {
       "name": "Jasmine",
       "description": "jasmine JSON config file",
       "fileMatch": ["jasmine.json"],
@@ -5151,6 +5160,12 @@
       "description": "runny, a rool for running things",
       "fileMatch": [".runny.yaml", ".runny.yml"],
       "url": "https://raw.githubusercontent.com/simonwhitaker/runny/main/schema/runny.schema.json"
+    },
+    {
+      "name": "rumdl",
+      "description": "Configuration file for rumdl, a fast Markdown linter and formatter",
+      "fileMatch": [".rumdl.toml", "rumdl.toml"],
+      "url": "https://raw.githubusercontent.com/rvben/rumdl/main/rumdl.schema.json"
     },
     {
       "name": "rustfmt",
@@ -7337,7 +7352,11 @@
       "name": "clang-format (.clang-format)",
       "description": "yaml clang-format config",
       "fileMatch": [".clang-format"],
-      "url": "https://www.schemastore.org/clang-format.json"
+      "url": "https://www.schemastore.org/clang-format-21.x.json",
+      "versions": {
+        "18.x": "https://www.schemastore.org/clang-format-18.x.json",
+        "21.x": "https://www.schemastore.org/clang-format-21.x.json"
+      }
     },
     {
       "name": "Estuary Flow Catalog",
