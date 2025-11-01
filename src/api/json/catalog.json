@@ -3032,7 +3032,7 @@
     {
       "name": "Hayagriva",
       "description": "A bibliography management format for the modern age",
-      "url": "https://www.schemastore.org/hayagriva.json"
+      "url": "https://jassielof.github.io/json-schemas/docs/hayagriva.schema.json"
     },
     {
       "name": "Hayson",
@@ -3213,7 +3213,7 @@
       "name": "ioBroker JSON UI",
       "description": "ioBroker JSON-based admin user interfaces - config, custom and tabs",
       "fileMatch": ["jsonConfig.json", "jsonCustom.json", "jsonTab.json"],
-      "url": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/packages/jsonConfig/schemas/jsonConfig.json"
+      "url": "https://raw.githubusercontent.com/ioBroker/json-config/main/schemas/jsonConfig.json"
     },
     {
       "name": "ioBroker Package manifest",
@@ -3310,8 +3310,9 @@
       "name": "JReleaser",
       "description": "JReleaser config file",
       "fileMatch": ["jreleaser.yml", "jreleaser.json"],
-      "url": "https://www.schemastore.org/jreleaser-1.20.0.json",
+      "url": "https://www.schemastore.org/jreleaser-1.21.0.json",
       "versions": {
+        "1.21.0": "https://www.schemastore.org/jreleaser-1.21.0.json",
         "1.20.0": "https://www.schemastore.org/jreleaser-1.20.0.json",
         "1.19.0": "https://www.schemastore.org/jreleaser-1.19.0.json",
         "1.18.0": "https://www.schemastore.org/jreleaser-1.18.0.json",
@@ -5429,8 +5430,8 @@
       "fileMatch": [
         ".sfdx-hardis.yml",
         ".sfdx-hardis.yaml",
-        "**/branches/.sfdx-hardis.*.yml",
-        "**/branches/.sfdx-hardis.*.yaml"
+        ".sfdx-hardis.*.yml",
+        ".sfdx-hardis.*.yaml"
       ],
       "url": "https://raw.githubusercontent.com/hardisgroupcom/sfdx-hardis/main/config/sfdx-hardis.jsonschema.json"
     },
@@ -6080,7 +6081,7 @@
       "name": "Typst Manifest",
       "description": "Typst package manifest file (typst.toml)",
       "fileMatch": ["typst.toml"],
-      "url": "https://www.schemastore.org/typst.json"
+      "url": "https://jassielof.github.io/json-schemas/docs/typst.schema.json"
     },
     {
       "name": "typos.toml",
@@ -8729,6 +8730,26 @@
       "versions": {
         "1.0.0": "https://www.schemastore.org/aio-wasm-graph-config-1.0.0.json"
       }
+    },
+    {
+      "name": "Airbyte Declarative Connectors Specification (manifest.yaml)",
+      "description": "Airbyte Specification for custom connectors",
+      "fileMatch": [
+        "source-*-manifest.yaml",
+        "destination-*-manifest.yaml",
+        "**/source-*/manifest.yaml",
+        "**/destination-*/manifest.yaml"
+      ],
+      "url": "https://raw.githubusercontent.com/airbytehq/airbyte-python-cdk/49c5a482de7bdfbaa3a68373a940b90c0690a56f/airbyte_cdk/sources/declarative/generated/declarative_component_schema.json"
+    },
+    {
+      "name": "Airbyte Connector Metadata Specification (metadata.yaml)",
+      "description": "Airbyte Specification for custom connectors",
+      "fileMatch": [
+        "**/source-*/metadata.yaml",
+        "**/destination-*/metadata.yaml"
+      ],
+      "url": "https://raw.githubusercontent.com/airbytehq/airbyte/refs/heads/master/airbyte-ci/connectors/metadata_service/lib/metadata_service/models/generated/ConnectorMetadataDefinitionV0.json"
     }
   ]
 }
